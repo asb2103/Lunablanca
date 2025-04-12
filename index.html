@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luna Ancestral | Chamanismo y Rituales</title>
-    <meta name="description" content="Sabiduría ancestral para resolver problemas de amor, dinero y salud. Rituales, conjuros y protección espiritual.">
+    <title>Santuario Santa Muerte | Protección y Bendiciones</title>
+    <meta name="description" content="Devoción y rituales sagrados a la Santa Muerte. Amuletos de protección, limpiezas espirituales y peticiones especiales.">
     
     <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel+Decorative&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,79 +22,76 @@
     <!-- Fondo de partículas -->
     <div id="particles-js"></div>
     
-    <!-- Cabecera -->
+    <!-- Cabecera Sagrada -->
     <header data-aos="fade-down">
         <div class="logo">
-            <h1><i class="fas fa-hand-sparkles"></i> Luna Ancestral</h1>
-            <p>Sabiduría Chamánica desde 1692</p>
+            <h1><i class="fas fa-skull"></i> Santuario Santa Muerte</h1>
+            <p>Protección Divina desde 1940</p>
         </div>
     </header>
 
-    <!-- Sección Principal -->
-    <section class="hero">
-        <div class="hero-content" data-aos="zoom-in" data-aos-delay="300">
-            <h2>Donde la Magia <span class="flame-text">Encuentra</span> su Poder</h2>
-            <p class="incantation">"Por los poderes de la luna y las sombras, tu destino se revelará..."</p>
+    <!-- Altar Principal -->
+    <section class="altar">
+        <div class="altar-content" data-aos="zoom-in" data-aos-delay="300">
+            <div class="santa-image"></div>
+            <h2>Recibe la <span class="blood-text">Protección</span> de la Niña Blanca</h2>
+            <p class="oracion">"Santísima Muerte, te pido con devoción, líbrame de todo mal y peligro..."</p>
             <a href="#consulta" class="btn btn-ritual">
-                <i class="fas fa-book-dead"></i> Iniciar Ritual
+                <i class="fas fa-pray"></i> Hacer Petición
             </a>
         </div>
     </section>
 
-    <!-- Servicios -->
-    <section class="services">
-        <h2 data-aos="fade-up">Artes Ocultas</h2>
-        <div class="services-grid">
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <h3><i class="fas fa-pentagram"></i> Rituales de Amor</h3>
-                <p>Atrae y recupera el amor verdadero con ceremonias ancestrales</p>
+    <!-- Ofrendas -->
+    <section class="ofrendas">
+        <h2 data-aos="fade-up">Servicios Sagrados</h2>
+        <div class="ofrendas-grid">
+            <div class="ofrenda-card" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fas fa-hand-holding-heart"></i> Protección Total</h3>
+                <p>Ritual de 7 velas negras contra enemigos</p>
+                <div class="card-glow"></div>
             </div>
             
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <h3><i class="fas fa-coffin"></i> Protección Espiritual</h3>
-                <p>Escudos contra maldiciones y energías negativas</p>
+            <div class="ofrenda-card" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fas fa-coins"></i> Bendición de Abundancia</h3>
+                <p>Ofrenda con monedas doradas y miel</p>
             </div>
             
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <h3><i class="fas fa-cauldron"></i> Hechizos de Prosperidad</h3>
-                <p>Atrae abundancia y éxito en tus negocios</p>
+            <div class="ofrenda-card" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="fas fa-heart-crack"></i> Amarres de Amor</h3>
+                <p>Atracción y fidelidad con cabellos entrelazados</p>
             </div>
         </div>
     </section>
 
-    <!-- Formulario de Consulta -->
-    <section id="consulta" class="consultation-form" data-aos="fade-up">
-        <h2><i class="fas fa-scroll"></i> Consulta del Destino</h2>
-        <form id="ritualForm">
+    <!-- Formulario de Petición -->
+    <section id="consulta" class="peticion-form" data-aos="fade-up">
+        <h2><i class="fas fa-scroll"></i> Libro de Peticiones</h2>
+        <form id="santaForm">
             <div class="form-group">
-                <label for="nombre"><i class="fas fa-user-secret"></i> Nombre:</label>
+                <label for="nombre"><i class="fas fa-user-alt"></i> Nombre Completo:</label>
                 <input type="text" id="nombre" class="form-control" required>
             </div>
             
             <div class="form-group">
-                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
-                <input type="email" id="email" class="form-control" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="problema"><i class="fas fa-skull"></i> Tipo de Problema:</label>
-                <select id="problema" class="form-control" required>
-                    <option value="amor">Amor</option>
-                    <option value="dinero">Dinero</option>
-                    <option value="salud">Salud</option>
-                    <option value="proteccion">Protección</option>
-                </select>
+                <label for="peticion"><i class="fas fa-praying-hands"></i> Tu Petición:</label>
+                <textarea id="peticion" class="form-control" rows="5" required></textarea>
             </div>
             
             <button type="submit" class="btn btn-ritual">
-                <i class="fas fa-hand-sparkles"></i> Enviar Consulta
+                <i class="fas fa-candle-holder"></i> Ofrendar Petición
             </button>
         </form>
     </section>
 
     <!-- Pie de Página -->
     <footer data-aos="fade-up">
-        <p>© 2024 Luna Ancestral - Todos los misterios reservados</p>
+        <p>© Santuario Santa Muerte - Todos los misterios reservados</p>
+        <div class="rosario">
+            <i class="fas fa-cross"></i>
+            <i class="fas fa-skull"></i>
+            <i class="fas fa-candle-holder"></i>
+        </div>
     </footer>
 
     <!-- Scripts -->
