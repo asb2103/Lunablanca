@@ -3,30 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luna Blanca | Magia Cósmica Futurista</title>
-    <meta name="description" content="Consultas de magia blanca con tecnología cuántica. Conexión espiritual futurista para transformar tu realidad.">
-    <meta name="keywords" content="magia blanca futurista, consultas espirituales cuánticas, tecnología mística, luna blanca cósmica">
+    <title>Luna Blanca | Magia Cósmica Cuántica</title>
+    <meta name="description" content="Consultas de magia blanca con tecnología cuántica. Transforma tu realidad con nuestro sistema espiritual avanzado.">
     
-    <!-- Preload para mejor performance -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;500;700&display=swap" as="style">
-    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
-    
-    <!-- Hojas de estilo -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Fuentes -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Librerías -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Efectos de fondo -->
     <div id="particles-js"></div>
     <div class="cosmic-sphere sphere-1"></div>
     <div class="cosmic-sphere sphere-2"></div>
-    
-    <!-- Cabecera futurista -->
+
+    <!-- Cabecera -->
     <header data-aos="fade-down">
         <div class="logo">
             <h1>Luna Blanca</h1>
@@ -34,34 +30,63 @@
         </div>
     </header>
 
-    <!-- Sección principal con efecto holográfico -->
+    <!-- Sección Hero -->
     <section class="hero">
         <div class="hero-content" data-aos="zoom-in" data-aos-delay="300">
             <h2>Transforma tu realidad con magia cuántica</h2>
-            <p>Conecta con las energías cósmicas a través de nuestra tecnología espiritual avanzada. Descubre un nuevo nivel de conciencia y manifestación.</p>
-            <a href="#consulta" class="btn btn-neon">Iniciar Consulta Cuántica</a>
+            <p>Conecta con las energías cósmicas mediante nuestra tecnología espiritual avanzada</p>
+            <a href="#consulta" class="btn btn-neon">Iniciar Consulta</a>
         </div>
     </section>
 
-    <!-- Sección de Servicios -->
+    <!-- Servicios -->
     <section class="services">
         <h2 data-aos="fade-up">Servicios de Alta Vibración</h2>
         <div class="services-grid">
-            <!-- Tarjetas de servicios... (mantener mismo contenido) -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <h3><i class="fas fa-atom"></i> Lecturas Cuánticas</h3>
+                <p>Análisis multidimensional de tu campo energético</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fas fa-shield-alt"></i> Escudos de Plasma</h3>
+                <p>Protección bioenergética con tecnología de 5ta dimensión</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="fas fa-star"></i> Activación Merkaba</h3>
+                <p>Vehículo de luz para viaje interdimensional</p>
+            </div>
         </div>
     </section>
 
-    <!-- Formulario de consulta -->
+    <!-- Formulario -->
     <section id="consulta" class="consultation-form" data-aos="fade-up">
-        <!-- Formulario... (mantener mismo contenido) -->
+        <h2>Consulta Cuántica</h2>
+        <form id="quantumForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" class="form-control" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-neon">
+                <i class="fas fa-paper-plane"></i> Enviar
+            </button>
+        </form>
     </section>
 
     <!-- Pie de página -->
     <footer data-aos="fade-up">
-        <p>© 2025 Luna Blanca | Tecnología Espiritual Cuántica | Todos los derechos interdimensionales reservados</p>
+        <p>© 2025 Luna Blanca - Tecnología Espiritual Cuántica</p>
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="app.js"></script>
 </body>
