@@ -7,17 +7,20 @@
     <meta name="description" content="Sabiduría ancestral para resolver problemas de amor, dinero y salud. Rituales, conjuros y protección espiritual.">
     
     <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel+Decorative&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Hojas de estilo -->
+    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animaciones -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Efectos de fondo -->
+    <!-- Fondo de partículas -->
     <div id="particles-js"></div>
-    <div class="smoke-effect"></div>
     
     <!-- Cabecera -->
     <header data-aos="fade-down">
@@ -27,10 +30,9 @@
         </div>
     </header>
 
-    <!-- Sección Hero -->
+    <!-- Sección Principal -->
     <section class="hero">
         <div class="hero-content" data-aos="zoom-in" data-aos-delay="300">
-            <div class="ancient-symbol"></div>
             <h2>Donde la Magia <span class="flame-text">Encuentra</span> su Poder</h2>
             <p class="incantation">"Por los poderes de la luna y las sombras, tu destino se revelará..."</p>
             <a href="#consulta" class="btn btn-ritual">
@@ -44,23 +46,56 @@
         <h2 data-aos="fade-up">Artes Ocultas</h2>
         <div class="services-grid">
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="card-pentagram"></div>
-                <h3><i class="fas fa-pentagram"></i> Rituales Ancestrales</h3>
-                <p>Ceremonias de alta magia para amor, prosperidad y protección</p>
-                <div class="card-glow"></div>
+                <h3><i class="fas fa-pentagram"></i> Rituales de Amor</h3>
+                <p>Atrae y recupera el amor verdadero con ceremonias ancestrales</p>
             </div>
-            <!-- Más tarjetas de servicios... -->
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <h3><i class="fas fa-coffin"></i> Protección Espiritual</h3>
+                <p>Escudos contra maldiciones y energías negativas</p>
+            </div>
+            
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="fas fa-cauldron"></i> Hechizos de Prosperidad</h3>
+                <p>Atrae abundancia y éxito en tus negocios</p>
+            </div>
         </div>
     </section>
 
-    <!-- Formulario -->
+    <!-- Formulario de Consulta -->
     <section id="consulta" class="consultation-form" data-aos="fade-up">
-        <div class="blood-drip"></div>
-        <h2><i class="fas fa-cauldron"></i> Consulta del Destino</h2>
+        <h2><i class="fas fa-scroll"></i> Consulta del Destino</h2>
         <form id="ritualForm">
-            <!-- Campos del formulario actualizados... -->
+            <div class="form-group">
+                <label for="nombre"><i class="fas fa-user-secret"></i> Nombre:</label>
+                <input type="text" id="nombre" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="problema"><i class="fas fa-skull"></i> Tipo de Problema:</label>
+                <select id="problema" class="form-control" required>
+                    <option value="amor">Amor</option>
+                    <option value="dinero">Dinero</option>
+                    <option value="salud">Salud</option>
+                    <option value="proteccion">Protección</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-ritual">
+                <i class="fas fa-hand-sparkles"></i> Enviar Consulta
+            </button>
         </form>
     </section>
+
+    <!-- Pie de Página -->
+    <footer data-aos="fade-up">
+        <p>© 2024 Luna Ancestral - Todos los misterios reservados</p>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
