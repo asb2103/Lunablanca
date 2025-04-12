@@ -1,7 +1,8 @@
 :root {
-    --main-color: #6a4c93;
-    --dark-bg: #0a0a14;
-    --neon-effect: #00f7ff;
+    --main-color: #8B5CF6;
+    --dark-bg: #0F172A;
+    --neon-effect: #10B981;
+    --text-light: #F8FAFC;
 }
 
 * {
@@ -13,7 +14,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background: var(--dark-bg);
-    color: #fff;
+    color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -28,16 +29,21 @@ body {
 
 header {
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     position: relative;
     z-index: 100;
 }
 
 .logo h1 {
     color: var(--main-color);
-    font-size: 2.8rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    text-shadow: 0 0 15px rgba(106,76,147,0.4);
+    text-shadow: 0 0 20px rgba(139,92,246,0.4);
+}
+
+.logo p {
+    color: var(--neon-effect);
+    font-size: 1.2rem;
 }
 
 .services {
@@ -48,22 +54,50 @@ header {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .service-card {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.03);
     padding: 2rem;
     border-radius: 15px;
     border: 2px solid var(--main-color);
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
 }
 
 .service-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(139,92,246,0.2);
+}
+
+.service-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.service-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed rgba(139,92,246,0.2);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.service-list li:before {
+    content: "▹";
+    color: var(--neon-effect);
+    position: absolute;
+    left: 0;
+}
+
+.section-title {
+    text-align: center;
+    margin: 4rem 0;
+    font-size: 2.5rem;
+    color: var(--neon-effect);
 }
 
 .payment {
@@ -76,25 +110,25 @@ header {
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
 }
 
 .btn-payment {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    padding: 1rem 2.5rem;
+    gap: 1rem;
+    padding: 1.2rem 3rem;
     background: var(--main-color);
-    color: white;
-    border-radius: 30px;
+    color: var(--text-light);
+    border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s;
+    border: 2px solid transparent;
 }
 
 .btn-payment:hover {
-    background: var(--neon-effect);
-    color: var(--dark-bg);
-    box-shadow: 0 0 20px var(--neon-effect);
+    background: transparent;
+    border-color: var(--neon-effect);
+    color: var(--neon-effect);
 }
 
 .whatsapp-btn {
@@ -116,7 +150,7 @@ header {
 }
 
 .whatsapp-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(15deg);
 }
 
 @media (max-width: 768px) {
@@ -124,7 +158,16 @@ header {
         font-size: 2rem;
     }
     
-    .payment-methods {
-        flex-direction: column;
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .btn-payment {
+        width: 100%;
+        justify-content: center;
     }
 }
