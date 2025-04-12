@@ -1,3 +1,4 @@
+/* style.css */
 :root {
     --santa-red: #8B0000;
     --santa-white: #F5F5F5;
@@ -6,76 +7,110 @@
     --santa-glow: radial-gradient(circle, rgba(139,0,0,0.3) 0%, transparent 70%);
 }
 
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Crimson Text', serif;
     background: var(--santa-black);
     color: var(--santa-white);
     line-height: 1.8;
-    min-height: 100vh;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.altar {
-    position: relative;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.ibb.co/4T4ZYqL/santa-bg.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.santa-image {
-    width: 150px;
-    height: 200px;
-    margin: 0 auto;
-    background: url('https://i.ibb.co/3kmX5rK/santa-muerte.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.btn-ritual {
-    background: linear-gradient(45deg, var(--santa-red), var(--santa-black));
-    border: 2px solid var(--santa-gold);
-    color: var(--santa-white);
-    padding: 1rem 2.5rem;
-    transition: all 0.3s;
-}
-
-.btn-ritual:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px var(--santa-red);
-}
-
-.ofrenda-card {
-    background: rgba(0,0,0,0.8);
-    border: 2px solid var(--santa-red);
-    transition: all 0.3s;
-}
-
-.ofrenda-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px var(--santa-red);
-}
-
-.rosario {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
-    font-size: 1.5rem;
-    color: var(--santa-red);
-}
-
+/* Partículas corregidas */
 #particles-js {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    background: rgba(0,0,0,0.9);
+    z-index: 0; /* Capa inferior */
+    pointer-events: none; /* Permite interactuar con elementos debajo */
+}
+
+/* Contenido principal */
+main {
+    position: relative;
+    z-index: 100; /* Encima de partículas */
+}
+
+/* Botones mejorados */
+.btn-ritual {
+    background: linear-gradient(45deg, var(--santa-red), var(--santa-black));
+    border: 2px solid var(--santa-gold);
+    color: var(--santa-white);
+    padding: 1rem 2.5rem;
+    border-radius: 25px; /* Bordes más redondeados */
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(139,0,0,0.3);
+}
+
+.btn-ritual:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139,0,0,0.5);
+}
+
+/* Imagen de Santa Muerte con fallback */
+.santa-image {
+    width: 200px;
+    height: 300px;
+    margin: 0 auto 2rem;
+    background: url('https://ejemplo.com/santa-muerte.png') no-repeat center/contain;
+}
+
+.santa-fallback {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+/* Tarjetas de servicios */
+.ofrenda-card {
+    background: rgba(0,0,0,0.8);
+    border: 2px solid var(--santa-red);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+/* Formulario */
+.peticion-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+    border: 2px solid var(--santa-red);
+    position: relative;
+}
+
+/* Animaciones */
+@keyframes ritual-glow {
+    0% { box-shadow: 0 0 10px var(--santa-red); }
+    50% { box-shadow: 0 0 20px var(--santa-red); }
+    100% { box-shadow: 0 0 10px var(--santa-red); }
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .btn-ritual {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .santa-image {
+        width: 150px;
+        height: 225px;
+    }
 }
