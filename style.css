@@ -1,0 +1,161 @@
+/* Resetear margenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuentes y colores generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #6a4c93;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #9c79b0;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: url('https://via.placeholder.com/1920x800.png') no-repeat center center/cover;
+    color: #fff;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #6a4c93;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hero .btn:hover {
+    background-color: #8e5c9c;
+}
+
+/* Sección de Servicios */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px;
+    display: inline-block;
+    width: 28%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    color: #6a4c93;
+}
+
+.service-card p {
+    color: #555;
+}
+
+/* Formulario de consulta */
+.consultation-form {
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+    margin: 50px auto;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.consultation-form h2 {
+    font-size: 2rem;
+    color: #6a4c93;
+    margin-bottom: 20px;
+}
+
+.consultation-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.consultation-form input,
+.consultation-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.consultation-form button {
+    padding: 10px 20px;
+    background-color: #6a4c93;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.consultation-form button:hover {
+    background-color: #8e5c9c;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #6a4c93;
+    color: #fff;
+}
+
+footer p {
+    font-size: 1rem;
+}
