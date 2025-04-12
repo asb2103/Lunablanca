@@ -1,63 +1,68 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luna Blanca | Consultas de Magia Blanca</title>
+    <title>Luna Blanca | Magia Cósmica Futurista</title>
+    <meta name="description" content="Consultas de magia blanca con tecnología cuántica. Conexión espiritual futurista para transformar tu realidad.">
+    <meta name="keywords" content="magia blanca futurista, consultas espirituales cuánticas, tecnología mística, luna blanca cósmica">
+    
+    <!-- Preload para mejor performance -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;500;700&display=swap" as="style">
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
+    
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Consultas gratuitas de magia blanca para mejorar tu vida. Encuentra la paz y armonía que buscas.">
-    <meta name="keywords" content="magia blanca, consultas gratuitas, espiritualidad, paz, luna blanca">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <!-- Cabecera -->
-    <header>
+    <!-- Efectos de fondo -->
+    <div id="particles-js"></div>
+    <div class="cosmic-sphere sphere-1"></div>
+    <div class="cosmic-sphere sphere-2"></div>
+    
+    <!-- Cabecera futurista -->
+    <header data-aos="fade-down">
         <div class="logo">
             <h1>Luna Blanca</h1>
-            <p>Consultas totalmente gratis</p>
+            <p>Magia Cósmica Cuántica</p>
         </div>
     </header>
 
-    <!-- Sección principal -->
+    <!-- Sección principal con efecto holográfico -->
     <section class="hero">
-        <h2>Bienvenid@ a Luna Blanca</h2>
-        <p>Transforma tu vida con las poderosas fuerzas de la magia blanca. Consulta nuestros servicios sin costo alguno y encuentra la paz que buscas.</p>
-        <a href="#consulta" class="btn">Haz tu consulta ahora</a>
+        <div class="hero-content" data-aos="zoom-in" data-aos-delay="300">
+            <h2>Transforma tu realidad con magia cuántica</h2>
+            <p>Conecta con las energías cósmicas a través de nuestra tecnología espiritual avanzada. Descubre un nuevo nivel de conciencia y manifestación.</p>
+            <a href="#consulta" class="btn btn-neon">Iniciar Consulta Cuántica</a>
+        </div>
     </section>
 
     <!-- Sección de Servicios -->
     <section class="services">
-        <h2>Servicios Disponibles</h2>
-        <div class="service-card">
-            <h3>Lecturas Espirituales</h3>
-            <p>Consulta los misterios del universo y recibe guía espiritual para tu vida.</p>
-        </div>
-        <div class="service-card">
-            <h3>Protección Energética</h3>
-            <p>Recibe una protección espiritual para mantener alejadas las energías negativas.</p>
-        </div>
-        <div class="service-card">
-            <h3>Hechizos de Bienestar</h3>
-            <p>Hechizos personalizados para atraer amor, dinero y salud a tu vida.</p>
+        <h2 data-aos="fade-up">Servicios de Alta Vibración</h2>
+        <div class="services-grid">
+            <!-- Tarjetas de servicios... (mantener mismo contenido) -->
         </div>
     </section>
 
     <!-- Formulario de consulta -->
-    <section id="consulta" class="consultation-form">
-        <h2>Haz tu consulta ahora</h2>
-        <form action="#" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-
-            <label for="mensaje">Tu mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-            <button type="submit">Enviar consulta</button>
-        </form>
+    <section id="consulta" class="consultation-form" data-aos="fade-up">
+        <!-- Formulario... (mantener mismo contenido) -->
     </section>
 
     <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2025 Luna Blanca. Todos los derechos reservados.</p>
+    <footer data-aos="fade-up">
+        <p>© 2025 Luna Blanca | Tecnología Espiritual Cuántica | Todos los derechos interdimensionales reservados</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
