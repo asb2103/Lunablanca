@@ -1,85 +1,33 @@
-/* style.css */
-:root {
-    --santa-red: #8B0000;
-    --santa-white: #F5F5F5;
-    --santa-black: #1A1A1A;
-    --santa-gold: #D4AF37;
-}
+// app.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar AOS
+    AOS.init({
+        duration: 800,
+        once: true,
+        easing: 'ease-out'
+    });
 
-/* Partículas corregidas */
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-}
+    // Configurar partículas simples
+    if(typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 40, density: { enable: true, value_area: 800 }},
+                color: { value: '#8B0000' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                move: { enable: true, speed: 1, direction: 'none' }
+            }
+        });
+    }
 
-/* Botón WhatsApp */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: all 0.3s;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.1) rotate(15deg);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-}
-
-/* Sección ofrendas */
-.ofrendas {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.metodos-pago {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-}
-
-.metodo-card {
-    background: rgba(255,255,255,0.05);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 2px solid var(--santa-red);
-    transition: all 0.3s;
-}
-
-.metodo-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.08);
-}
-
-.btn-pago {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background: var(--santa-red);
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
-    margin-top: 1rem;
-    transition: all 0.3s;
-}
-
-.btn-pago:hover {
-    background: var(--santa-gold);
-    color: var(--santa-black);
-}
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
