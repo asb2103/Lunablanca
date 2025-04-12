@@ -1,197 +1,42 @@
-:root {
-    --blood-red: #8a0303;
-    --witch-purple: #4a004a;
-    --bone-white: #e8e1d1;
-    --ash-gray: #2b2b2b;
-    --ritual-glow: radial-gradient(circle, rgba(138,3,3,0.5) 0%, rgba(0,0,0,0) 70%);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out'
+    });
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+    // Partículas de rosas
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 40, density: { enable: true, value_area: 800 } },
+            color: { value: '#8B0000' },
+            shape: { type: 'image', image: { src: 'https://i.ibb.co/6n0r7vL/rose-petal.png', width: 50, height: 50 } },
+            opacity: { value: 0.7, random: true },
+            size: { value: 15, random: true },
+            move: { enable: true, speed: 2, direction: 'bottom', straight: false }
+        }
+    });
 
-body {
-    font-family: 'Crimson Text', serif;
-    background: linear-gradient(135deg, #0a000a 0%, #1a001a 100%);
-    color: var(--bone-white);
-    line-height: 1.8;
-    min-height: 100vh;
-}
+    // Animación de velas
+    const candles = document.createElement('div');
+    candles.className = 'velas-animadas';
+    document.body.appendChild(candles);
 
-h1, h2, h3 {
-    font-family: 'MedievalSharp', cursive;
-    color: var(--blood-red);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-    letter-spacing: 2px;
-}
-
-header {
-    background: rgba(0,0,0,0.9);
-    padding: 1.5rem;
-    text-align: center;
-    border-bottom: 3px solid var(--blood-red);
-    box-shadow: 0 0 20px rgba(138,3,3,0.3);
-    position: relative;
-    z-index: 100;
-}
-
-.logo h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    animation: candle-flicker 3s infinite;
-}
-
-.logo p {
-    color: var(--bone-white);
-    font-size: 1.1rem;
-}
-
-.hero {
-    position: relative;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 2rem;
-    z-index: 2;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h2 {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-}
-
-.incantation {
-    font-style: italic;
-    margin: 2rem 0;
-    color: var(--bone-white);
-    font-size: 1.2rem;
-}
-
-.services {
-    padding: 4rem 2rem;
-    position: relative;
-    z-index: 2;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.service-card {
-    background: rgba(0,0,0,0.7);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid var(--blood-red);
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(138,3,3,0.4);
-}
-
-.service-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.service-card h3 i {
-    margin-right: 0.8rem;
-}
-
-.consultation-form {
-    max-width: 600px;
-    margin: 4rem auto;
-    padding: 2.5rem;
-    background: rgba(0,0,0,0.8);
-    border-radius: 10px;
-    border: 2px solid var(--blood-red);
-    position: relative;
-    z-index: 2;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-control {
-    width: 100%;
-    padding: 0.8rem;
-    background: rgba(40,0,0,0.5);
-    border: 1px solid var(--blood-red);
-    color: var(--bone-white);
-    border-radius: 5px;
-    font-family: inherit;
-}
-
-.btn-ritual {
-    background: linear-gradient(45deg, var(--blood-red), var(--witch-purple));
-    color: var(--bone-white);
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    font-family: 'MedievalSharp', cursive;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.btn-ritual:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px var(--blood-red);
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: rgba(0,0,0,0.9);
-    border-top: 2px solid var(--blood-red);
-    margin-top: 4rem;
-}
-
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-@keyframes candle-flicker {
-    0%, 100% { text-shadow: 0 0 10px var(--blood-red); }
-    50% { text-shadow: 0 0 20px var(--blood-red), 0 0 30px var(--blood-red); }
-}
-
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2rem;
-    }
-    
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .consultation-form {
-        margin: 2rem 1rem;
-        padding: 1.5rem;
-    }
-}
+    // Manejo del formulario
+    document.getElementById('santaForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button');
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando Ofrenda...';
+        
+        setTimeout(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Petición Aceptada!';
+            this.reset();
+            // Efecto visual
+            const efecto = document.createElement('div');
+            efecto.className = 'ritual-effect';
+            document.body.appendChild(efecto);
+            setTimeout(() => efecto.remove(), 2000);
+        }, 1500);
+    });
+});
