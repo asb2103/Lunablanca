@@ -1,59 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar animaciones AOS
+    // Inicializar AOS
     AOS.init({
         duration: 1000,
         once: true,
         easing: 'ease-in-out'
     });
 
-    // Configurar partículas
+    // Partículas de rosas
     particlesJS('particles-js', {
         particles: {
-            number: { value: 60, density: { enable: true, value_area: 800 } },
-            color: { value: '#8a0303' },
-            shape: { type: 'circle' },
-            opacity: { value: 0.5, random: true },
-            size: { value: 3, random: true },
-            line_linked: { enable: false },
-            move: { enable: true, speed: 1, direction: 'none', random: true }
-        },
-        interactivity: {
-            events: {
-                onhover: { enable: true, mode: 'repulse' },
-                onclick: { enable: true, mode: 'push' }
-            }
+            number: { value: 40, density: { enable: true, value_area: 800 } },
+            color: { value: '#8B0000' },
+            shape: { type: 'image', image: { src: 'https://i.ibb.co/6n0r7vL/rose-petal.png', width: 50, height: 50 } },
+            opacity: { value: 0.7, random: true },
+            size: { value: 15, random: true },
+            move: { enable: true, speed: 2, direction: 'bottom', straight: false }
         }
     });
 
-    // Efecto de escritura en títulos
-    const animateTitles = () => {
-        document.querySelectorAll('h1, h2').forEach(title => {
-            const letters = title.textContent.split('');
-            title.textContent = '';
-            letters.forEach((letter, i) => {
-                const span = document.createElement('span');
-                span.textContent = letter;
-                span.style.opacity = '0';
-                span.style.animation = `appear 0.5s ${i * 0.1}s forwards`;
-                title.appendChild(span);
-            });
-        });
-    };
-
-    animateTitles();
+    // Animación de velas
+    const candles = document.createElement('div');
+    candles.className = 'velas-animadas';
+    document.body.appendChild(candles);
 
     // Manejo del formulario
-    document.getElementById('ritualForm').addEventListener('submit', function(e) {
+    document.getElementById('santaForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        const btn = this.querySelector('button[type="submit"]');
-        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
+        const btn = this.querySelector('button');
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando Ofrenda...';
         
         setTimeout(() => {
-            btn.innerHTML = '<i class="fas fa-check"></i> ¡Consulta Enviada!';
+            btn.innerHTML = '<i class="fas fa-check"></i> Petición Aceptada!';
             this.reset();
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-hand-sparkles"></i> Enviar Consulta';
-            }, 2000);
+            // Efecto visual
+            const efecto = document.createElement('div');
+            efecto.className = 'ritual-effect';
+            document.body.appendChild(efecto);
+            setTimeout(() => efecto.remove(), 2000);
         }, 1500);
     });
 });
