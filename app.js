@@ -3,65 +3,46 @@ document.addEventListener('DOMContentLoaded', function() {
     AOS.init({
         duration: 1000,
         once: true,
-        easing: 'ease-in-out'
+        easing: 'ease-in-out-quart'
     });
 
-    // Configurar partículas
+    // Configurar partículas de ceniza
     particlesJS('particles-js', {
         particles: {
-            number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: ['#7b2dff', '#00f7ff', '#ff2d7b'] },
-            shape: { type: 'circle' },
+            number: { value: 50, density: { enable: true, value_area: 800 } },
+            color: { value: '#8a0303' },
+            shape: { type: 'image', image: { src: 'https://www.freeiconspng.com/uploads/ash-png-5.png', width: 100, height: 100 } },
             opacity: { value: 0.5, random: true },
-            size: { value: 3, random: true },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: '#7b2dff',
-                opacity: 0.3,
-                width: 1
-            },
-            move: { enable: true, speed: 1, direction: 'none' }
+            size: { value: 10, random: true },
+            line_linked: { enable: false },
+            move: { enable: true, speed: 1, direction: 'none', random: true }
         },
         interactivity: {
-            detect_on: 'canvas',
             events: {
-                onhover: { enable: true, mode: 'grab' },
-                onclick: { enable: true, mode: 'push' },
-                resize: true
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' }
             }
-        },
-        retina_detect: true
+        }
     });
 
-    // Efecto de escritura
-    const heroTitle = document.querySelector('.hero h2');
-    const originalText = heroTitle.textContent;
-    heroTitle.textContent = '';
-    
-    let i = 0;
-    const typingEffect = setInterval(() => {
-        if (i < originalText.length) {
-            heroTitle.textContent += originalText.charAt(i);
-            i++;
-        } else {
-            clearInterval(typingEffect);
-        }
-    }, 50);
+    // Efecto de escritura siniestro
+    const titles = document.querySelectorAll('h1, h2');
+    titles.forEach(title => {
+        const letters = title.textContent.split('');
+        title.textContent = '';
+        letters.forEach((letter, i) => {
+            const span = document.createElement('span');
+            span.textContent = letter;
+            span.style.animation = `appear 0.5s ${i * 0.1}s forwards`;
+            title.appendChild(span);
+        });
+    });
 
-    // Manejo del formulario
-    const form = document.getElementById('quantumForm');
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-        
-        setTimeout(() => {
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Enviado!';
-            form.reset();
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar';
-            }, 2000);
-        }, 1500);
+    // Efecto de susurro al pasar el ratón
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            const whisper = new Audio('https://assets.mixkit.co/active_storage/sfx/2868/2868-preview.mp3');
+            whisper.play();
+        });
     });
 });
