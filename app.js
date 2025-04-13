@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    // Inicialización AOS con timeout para contenido dinámico
+    // Inicialización de AOS
     setTimeout(() => {
       if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, 300);
 
-    // Configuración de partículas
+    // Partículas
     if (typeof particlesJS !== 'undefined') {
       particlesJS('particles-js', {
         particles: {
@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
           shape: { type: 'circle' },
           opacity: { value: 0.5 },
           size: { value: 3 },
-          move: { 
-            enable: true, 
-            speed: 1, 
-            direction: 'none', 
-            random: true, 
-            out_mode: 'out' 
+          move: {
+            enable: true,
+            speed: 1,
+            direction: 'none',
+            random: true,
+            out_mode: 'out'
           }
         },
         interactivity: {
@@ -37,21 +37,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Smooth scroll mejorado
+    // Smooth scroll
     const anchors = document.querySelectorAll('a[href^="#"]');
     anchors.forEach(anchor => {
       anchor.addEventListener('click', e => {
         e.preventDefault();
         const targetID = anchor.getAttribute('href');
         const target = document.querySelector(targetID);
-        
+
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
           });
-          
-          // Actualizar URL sin recargar
           history.pushState(null, null, targetID);
         }
       });
