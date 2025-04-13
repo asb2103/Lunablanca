@@ -6,18 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     easing: 'ease-out-back'
   });
 
-  // Configuración de Particles.js
+  // Configuración de Particles.js con una paleta mística
   particlesJS('particles-js', {
     particles: {
       number: {
-        value: 70,
+        value: 80,
         density: {
           enable: true,
           value_area: 800
         }
       },
       color: {
-        value: '#8B5CF6'
+        value: ['#6a0dad', '#00ff99', '#ff8c00']  // Paleta mística con tonos púrpura, neón y naranja
       },
       shape: {
         type: 'circle'
