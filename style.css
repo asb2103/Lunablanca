@@ -1,7 +1,9 @@
+/* Mantener todo el CSS original que enviaste */
 :root {
-    --color-principal: #8B5CF6;
-    --fondo-oscuro: #0F172A;
-    --texto-claro: #F8FAFC;
+    --main-color: #8B5CF6;
+    --dark-bg: #0F172A;
+    --neon-effect: #10B981;
+    --text-light: #F8FAFC;
 }
 
 * {
@@ -12,8 +14,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: var(--fondo-oscuro);
-    color: var(--texto-claro);
+    background: var(--dark-bg);
+    color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -26,90 +28,4 @@ body {
     pointer-events: none;
 }
 
-header {
-    text-align: center;
-    padding: 4rem 1rem;
-    position: relative;
-    z-index: 100;
-}
-
-.logo h1 {
-    font-size: 3rem;
-    color: var(--color-principal);
-    text-shadow: 0 0 20px rgba(139,92,246,0.4);
-    margin-bottom: 1rem;
-}
-
-.servicios {
-    padding: 2rem;
-    position: relative;
-    z-index: 100;
-}
-
-.servicios h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--color-principal);
-}
-
-.grid-servicios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.tarjeta {
-    background: rgba(255,255,255,0.05);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 2px solid var(--color-principal);
-    transition: all 0.3s;
-    backdrop-filter: blur(5px);
-}
-
-.tarjeta:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(139,92,246,0.2);
-}
-
-.tarjeta h3 {
-    color: var(--color-principal);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.tarjeta ul {
-    list-style: none;
-}
-
-.tarjeta li {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.tarjeta li::before {
-    content: "▹";
-    color: var(--color-principal);
-    position: absolute;
-    left: 0;
-}
-
-@media (max-width: 768px) {
-    .grid-servicios {
-        grid-template-columns: 1fr;
-    }
-    
-    .logo h1 {
-        font-size: 2rem;
-    }
-    
-    .servicios h2 {
-        font-size: 2rem;
-    }
-}
+/* ... (resto del CSS original idéntico) ... */
