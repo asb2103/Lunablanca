@@ -1,9 +1,10 @@
-/* Variables de colores y estilos */
+/* Variables de colores y estilos místicos */
 :root {
-  --main-color: #8B5CF6;
-  --dark-bg: #0F172A;
-  --neon-effect: #10B981;
-  --text-light: #F8FAFC;
+  --main-color: #6a0dad;      /* Morado profundo para lo místico */
+  --accent-color: #ff8c00;    /* Naranja para toques vibrantes */
+  --dark-bg: #1c1c1c;         /* Fondo oscuro */
+  --neon-effect: #00ff99;     /* Color neón para acentos */
+  --text-light: #f5f5f5;
 }
 
 /* Reset básico */
@@ -20,9 +21,12 @@ body {
   color: var(--text-light);
   line-height: 1.6;
   overflow-x: hidden;
+  /* Opcional: se puede agregar una imagen de fondo sutil con opacidad */
+  /* background: url('ruta-de-tu-imagen.jpg') no-repeat center center fixed; */
+  /* background-size: cover; */
 }
 
-/* Fondo animado: posición fija, sin interferir con la interacción */
+/* Fondo de partículas */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -55,7 +59,7 @@ body {
   outline: none;
 }
 
-/* Cabecera principal */
+/* Encabezado y navegación */
 header {
   text-align: center;
   padding: 4rem 1rem;
@@ -66,14 +70,12 @@ header {
   color: var(--main-color);
   font-size: 3rem;
   margin-bottom: 1rem;
-  text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+  text-shadow: 0 0 20px rgba(106, 13, 173, 0.4);
 }
 .logo p {
-  color: var(--neon-effect);
+  color: var(--accent-color);
   font-size: 1.2rem;
 }
-
-/* Navegación */
 nav ul {
   list-style: none;
   display: flex;
@@ -93,7 +95,7 @@ nav a:focus {
   outline: none;
 }
 
-/* Sección de Servicios */
+/* Sección de Servicios (Rituales y Altares) */
 .services {
   padding: 2rem;
   position: relative;
@@ -113,7 +115,7 @@ nav a:focus {
   margin: 0 auto;
 }
 .service-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 15px;
   border: 2px solid var(--main-color);
@@ -124,8 +126,11 @@ nav a:focus {
 .service-card:hover,
 .service-card:focus {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 10px 20px rgba(106, 13, 173, 0.2);
   outline: none;
+}
+.service-card h3 {
+  margin-bottom: 1rem;
 }
 .service-list {
   list-style: none;
@@ -133,7 +138,7 @@ nav a:focus {
 }
 .service-list li {
   padding: 0.8rem 0;
-  border-bottom: 1px dashed rgba(139, 92, 246, 0.2);
+  border-bottom: 1px dashed rgba(106, 13, 173, 0.2);
   position: relative;
   padding-left: 2rem;
 }
@@ -144,7 +149,7 @@ nav a:focus {
   left: 0;
 }
 
-/* Sección de Pagos */
+/* Sección de Ofrendas y Pagos */
 .payment {
   padding: 4rem 2rem;
   text-align: center;
