@@ -1,20 +1,17 @@
-/* Variables de colores y estilos místicos */
 :root {
-  --main-color: #6a0dad;      /* Púrpura profundo para atmósfera mística */
-  --accent-color: #ff8c00;    /* Naranja vibrante para acentos */
-  --dark-bg: #1c1c1c;         /* Fondo muy oscuro */
-  --neon-effect: #00ff99;     /* Verde neón para destacar efectos */
+  --main-color: #6a0dad;
+  --accent-color: #ff8c00;
+  --dark-bg: #1c1c1c;
+  --neon-effect: #00ff99;
   --text-light: #f5f5f5;
 }
 
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilos generales del body */
 body {
   font-family: 'Arial', sans-serif;
   background: var(--dark-bg);
@@ -23,182 +20,97 @@ body {
   overflow-x: hidden;
 }
 
-/* Mensaje para navegadores sin JavaScript */
-.noscript-msg {
-  background: var(--main-color);
-  color: var(--dark-bg);
-  text-align: center;
-  padding: 1rem;
-  font-size: 1rem;
-}
-
-/* Fondo de partículas: posición fija para no interferir con la interacción */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Botón de WhatsApp */
-.whatsapp-btn {
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  background: #25D366;
-  color: #fff;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  transition: transform 0.3s;
-}
-.whatsapp-btn:hover,
-.whatsapp-btn:focus {
-  transform: scale(1.1) rotate(15deg);
-  outline: none;
-}
-
-/* Encabezado y navegación */
 header {
+  background-color: #111;
+  padding: 1rem;
   text-align: center;
-  padding: 4rem 1rem;
-  position: relative;
-  z-index: 100;
+  border-bottom: 2px solid var(--main-color);
 }
+
 .logo h1 {
   color: var(--main-color);
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 20px rgba(106, 13, 173, 0.4);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
+
 .logo p {
-  color: var(--accent-color);
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: var(--text-light);
 }
+
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1rem;
   margin-top: 1rem;
-}
-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s;
-}
-nav a:hover,
-nav a:focus {
-  color: var(--main-color);
-  outline: none;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-/* Sección de Servicios (Rituales y Altares) */
-.services {
-  padding: 2rem;
-  position: relative;
-  z-index: 100;
+nav a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: bold;
 }
-.section-title {
-  text-align: center;
-  margin: 4rem 0;
-  font-size: 2.5rem;
-  color: var(--neon-effect);
+
+main {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
 }
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+
+section {
+  margin-bottom: 3rem;
 }
-.service-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 15px;
-  border: 2px solid var(--main-color);
-  transition: all 0.3s;
-  backdrop-filter: blur(5px);
-  cursor: default;
-}
-.service-card:hover,
-.service-card:focus {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(106, 13, 173, 0.2);
-  outline: none;
-}
-.service-card h3 {
+
+h2 {
+  font-size: 2rem;
   margin-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
 }
-.service-list {
-  list-style: none;
-  margin-top: 1.5rem;
+
+.ritual, .altar, .ofrenda {
+  margin-bottom: 1.5rem;
+  background-color: #222;
+  padding: 1rem;
+  border-left: 4px solid var(--main-color);
+  border-radius: 8px;
 }
-.service-list li {
-  padding: 0.8rem 0;
-  border-bottom: 1px dashed rgba(106, 13, 173, 0.2);
-  position: relative;
-  padding-left: 2rem;
+
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
 }
-.service-list li:before {
-  content: "▹";
-  color: var(--neon-effect);
-  position: absolute;
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
   left: 0;
 }
 
-/* Sección de Ofrendas y Contribuciones */
-.payment {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.payment-methods {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.btn-payment {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.2rem 3rem;
-  background: var(--main-color);
-  color: var(--text-light);
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background 0.3s, border 0.3s, color 0.3s;
-  border: 2px solid transparent;
-}
-.btn-payment:hover,
-.btn-payment:focus {
-  background: transparent;
-  border-color: var(--neon-effect);
-  color: var(--neon-effect);
-  outline: none;
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  font-size: 2rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  z-index: 1000;
 }
 
-/* Media Queries para dispositivos móviles */
-@media (max-width: 768px) {
-  .logo h1 {
-    font-size: 2rem;
-  }
-  .service-card {
-    padding: 1.5rem;
-  }
-  .section-title {
-    font-size: 2rem;
-  }
-  .btn-payment {
-    width: 100%;
-    justify-content: center;
-  }
+.noscript-msg {
+  background-color: #ffdddd;
+  color: #000;
+  padding: 1rem;
+  text-align: center;
 }
