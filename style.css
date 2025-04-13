@@ -1,4 +1,3 @@
-/* Mantener todo el CSS original que enviaste */
 :root {
     --main-color: #8B5CF6;
     --dark-bg: #0F172A;
@@ -28,4 +27,147 @@ body {
     pointer-events: none;
 }
 
-/* ... (resto del CSS original idéntico) ... */
+.whatsapp-btn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: all 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+header {
+    text-align: center;
+    padding: 4rem 1rem;
+    position: relative;
+    z-index: 100;
+}
+
+.logo h1 {
+    color: var(--main-color);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(139,92,246,0.4);
+}
+
+.logo p {
+    color: var(--neon-effect);
+    font-size: 1.2rem;
+}
+
+.services {
+    padding: 2rem;
+    position: relative;
+    z-index: 100;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: rgba(255,255,255,0.03);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid var(--main-color);
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(139,92,246,0.2);
+}
+
+.service-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.service-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed rgba(139,92,246,0.2);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.service-list li:before {
+    content: "▹";
+    color: var(--neon-effect);
+    position: absolute;
+    left: 0;
+}
+
+.section-title {
+    text-align: center;
+    margin: 4rem 0;
+    font-size: 2.5rem;
+    color: var(--neon-effect);
+}
+
+.payment {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-payment {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 3rem;
+    background: var(--main-color);
+    color: var(--text-light);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn-payment:hover {
+    background: transparent;
+    border-color: var(--neon-effect);
+    color: var(--neon-effect);
+}
+
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .btn-payment {
+        width: 100%;
+        justify-content: center;
+    }
+}
