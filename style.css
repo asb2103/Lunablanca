@@ -1,9 +1,9 @@
 /* Variables de colores y estilos místicos */
 :root {
-  --main-color: #6a0dad;      /* Morado profundo para lo místico */
-  --accent-color: #ff8c00;    /* Naranja para toques vibrantes */
-  --dark-bg: #1c1c1c;         /* Fondo oscuro */
-  --neon-effect: #00ff99;     /* Color neón para acentos */
+  --main-color: #6a0dad;      /* Púrpura profundo para atmósfera mística */
+  --accent-color: #ff8c00;    /* Naranja vibrante para acentos */
+  --dark-bg: #1c1c1c;         /* Fondo muy oscuro */
+  --neon-effect: #00ff99;     /* Verde neón para destacar efectos */
   --text-light: #f5f5f5;
 }
 
@@ -21,12 +21,18 @@ body {
   color: var(--text-light);
   line-height: 1.6;
   overflow-x: hidden;
-  /* Opcional: se puede agregar una imagen de fondo sutil con opacidad */
-  /* background: url('ruta-de-tu-imagen.jpg') no-repeat center center fixed; */
-  /* background-size: cover; */
 }
 
-/* Fondo de partículas */
+/* Mensaje para navegadores sin JavaScript */
+.noscript-msg {
+  background: var(--main-color);
+  color: var(--dark-bg);
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+/* Fondo de partículas: posición fija para no interferir con la interacción */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -149,7 +155,7 @@ nav a:focus {
   left: 0;
 }
 
-/* Sección de Ofrendas y Pagos */
+/* Sección de Ofrendas y Contribuciones */
 .payment {
   padding: 4rem 2rem;
   text-align: center;
