@@ -31,7 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
+// Inicializar animaciones AOS
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+        duration: 800,
+        once: true,
+        easing: 'ease-out'
+    });
+});
     // Smooth scroll para navegación
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
