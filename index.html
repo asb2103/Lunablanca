@@ -1,142 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamanismo Ancestral | Servicios Espirituales</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios espirituales y chamánicos orientados a la sanación integral, conexión ancestral, rituales de amor, protección y mucho más.">
+  <title>Chamanismo Ancestral | Servicios Espirituales</title>
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="particles-js"></div>
+  <!-- Fondo animado con Particles JS -->
+  <div id="particles-js" aria-hidden="true"></div>
 
-    <!-- Botón WhatsApp Arriba -->
-    <a href="https://wa.me/TUNUMERO" class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+  <!-- Botón de WhatsApp (accesible: se abre en una nueva pestaña) -->
+  <a href="https://wa.me/TUNUMERO" class="whatsapp-btn" target="_blank" aria-label="Contáctanos por WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
 
-    <header data-aos="fade-down">
-        <div class="logo">
-            <h1><i class="fas fa-hand-sparkles"></i> Sabiduría Ancestral</h1>
-            <p>Sanación Espiritual Integral</p>
-        </div>
-    </header>
+  <!-- Cabecera principal -->
+  <header data-aos="fade-down" role="banner">
+    <div class="logo">
+      <h1><i class="fas fa-hand-sparkles" aria-hidden="true"></i> Sabiduría Ancestral</h1>
+      <p>Sanación Espiritual Integral</p>
+    </div>
+    <!-- Posible navegación interna (añade enlaces según necesidad) -->
+    <nav role="navigation">
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#donaciones">Ofrendas</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="services" data-aos="fade-up">
-            <h2 class="section-title"><i class="fas fa-magic"></i> Servicios Chamánicos</h2>
-            <div class="services-grid">
-                
-                <!-- Servicio 1: Limpieza Energética -->
-                <div class="service-card">
-                    <h3><i class="fas fa-fire"></i> Limpieza Energética</h3>
-                    <ul class="service-list">
-                        <li>Purificación con hierbas sagradas</li>
-                        <li>Sanación de espacios</li>
-                        <li>Armonización de chakras</li>
-                    </ul>
-                </div>
+  <!-- Contenido principal -->
+  <main>
+    <!-- Sección de Servicios Chamánicos -->
+    <section class="services" id="servicios" data-aos="fade-up">
+      <h2 class="section-title"><i class="fas fa-magic" aria-hidden="true"></i> Servicios Chamánicos</h2>
+      <div class="services-grid">
+        <!-- Servicio 1: Limpieza Energética -->
+        <article class="service-card" tabindex="0">
+          <h3><i class="fas fa-fire" aria-hidden="true"></i> Limpieza Energética</h3>
+          <ul class="service-list">
+            <li>Purificación con hierbas sagradas</li>
+            <li>Sanación de espacios</li>
+            <li>Armonización de chakras</li>
+          </ul>
+        </article>
 
-                <!-- Servicio 2: Amor -->
-                <div class="service-card">
-                    <h3><i class="fas fa-heart-circle-bolt"></i> Rituales de Amor</h3>
-                    <ul class="service-list">
-                        <li>Amarres conscientes</li>
-                        <li>Alejamiento de influencias</li>
-                        <li>Atracción de alma gemela</li>
-                    </ul>
-                </div>
+        <!-- Servicio 2: Rituales de Amor -->
+        <article class="service-card" tabindex="0">
+          <h3><i class="fas fa-heart-circle-bolt" aria-hidden="true"></i> Rituales de Amor</h3>
+          <ul class="service-list">
+            <li>Amarres conscientes</li>
+            <li>Alejamiento de influencias</li>
+            <li>Atracción de alma gemela</li>
+          </ul>
+        </article>
 
-                <!-- Servicio 3: Prosperidad -->
-                <div class="service-card">
-                    <h3><i class="fas fa-coins"></i> Prosperidad</h3>
-                    <ul class="service-list">
-                        <li>Apertura de caminos</li>
-                        <li>Rituales con monedas antiguas</li>
-                        <li>Protección de negocios</li>
-                    </ul>
-                </div>
+        <!-- Servicio 3: Prosperidad -->
+        <article class="service-card" tabindex="0">
+          <h3><i class="fas fa-coins" aria-hidden="true"></i> Prosperidad</h3>
+          <ul class="service-list">
+            <li>Apertura de caminos</li>
+            <li>Rituales con monedas antiguas</li>
+            <li>Protección de negocios</li>
+          </ul>
+        </article>
 
-                <!-- Servicio 4: Protección -->
-                <div class="service-card">
-                    <h3><i class="fas fa-shield-halved"></i> Protección</h3>
-                    <ul class="service-list">
-                        <li>Escudos energéticos</li>
-                        <li>Sellado de viviendas</li>
-                        <li>Amuletos personalizados</li>
-                    </ul>
-                </div>
+        <!-- Servicio 4: Protección -->
+        <article class="service-card" tabindex="0">
+          <h3><i class="fas fa-shield-halved" aria-hidden="true"></i> Protección</h3>
+          <ul class="service-list">
+            <li>Escudos energéticos</li>
+            <li>Sellado de viviendas</li>
+            <li>Amuletos personalizados</li>
+          </ul>
+        </article>
 
-                <!-- Servicio 5: Sanación -->
-                <div class="service-card">
-                    <h3><i class="fas fa-leaf"></i> Sanación</h3>
-                    <ul class="service-list">
-                        <li>Terapias ancestrales</li>
-                        <li>Medicina herbal</li>
-                        <li>Sanación a distancia</li>
-                    </ul>
-                </div>
+        <!-- Servicio 5: Sanación -->
+        <article class="service-card" tabindex="0">
+          <h3><i class="fas fa-leaf" aria-hidden="true"></i> Sanación</h3>
+          <ul class="service-list">
+            <li>Terapias ancestrales</li>
+            <li>Medicina herbal</li>
+            <li>Sanación a distancia</li>
+          </ul>
+        </article>
 
-                <!-- Servicio 6: Adivinación -->
-                <div class="service-card">
-                    <h3><i class="fas fa-crystal-ball"></i> Adivinación</h3>
-                    <ul class="service-list">
-                        <li>Lectura de cartas</li>
-                        <li>Interpretación de sueños</li>
-                        <li>Rituales con péndulo</li>
-                    </ul>
-                </div>
+        <!-- Servicio 6: Adivinación -->
+        <article class="service-card" tabindex="0">
+          <h3><i class="fas fa-crystal-ball" aria-hidden="true"></i> Adivinación</h3>
+          <ul class="service-list">
+            <li>Lectura de cartas</li>
+            <li>Interpretación de sueños</li>
+            <li>Rituales con péndulo</li>
+          </ul>
+        </article>
 
-                <!-- Servicio 7: Ancestros -->
-                <div class="service-card">
-                    <h3><i class="fas fa-ankh"></i> Conexión Ancestral</h3>
-                    <ul class="service-list">
-                        <li>Comunicación con guías</li>
-                        <li>Sanación transgeneracional</li>
-                        <li>Rituales de linaje</li>
-                    </ul>
-                </div>
+        <!-- Servicio 7: Conexión Ancestral -->
+        <article class="service-card" tabindex="0">
+          <h3><i class="fas fa-ankh" aria-hidden="true"></i> Conexión Ancestral</h3>
+          <ul class="service-list">
+            <li>Comunicación con guías</li>
+            <li>Sanación transgeneracional</li>
+            <li>Rituales de linaje</li>
+          </ul>
+        </article>
 
-                <!-- Servicio 8: Lunar -->
-                <div class="service-card">
-                    <h3><i class="fas fa-moon-stars"></i> Rituales Lunares</h3>
-                    <ul class="service-list">
-                        <li>Luna nueva y llena</li>
-                        <li>Consagración de objetos</li>
-                        <li>Ceremonias de iniciación</li>
-                    </ul>
-                </div>
+        <!-- Servicio 8: Rituales Lunares -->
+        <article class="service-card" tabindex="0">
+          <h3><i class="fas fa-moon-stars" aria-hidden="true"></i> Rituales Lunares</h3>
+          <ul class="service-list">
+            <li>Luna nueva y llena</li>
+            <li>Consagración de objetos</li>
+            <li>Ceremonias de iniciación</li>
+          </ul>
+        </article>
 
-                <!-- Servicio 9: Numerología -->
-                <div class="service-card">
-                    <h3><i class="fas fa-hashtag"></i> Numerología</h3>
-                    <ul class="service-list">
-                        <li>Cálculo de número de vida</li>
-                        <li>Análisis de nombre</li>
-                        <li>Compatibilidad numérica</li>
-                        <li>Ciclos personales</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <!-- Servicio 9: Numerología -->
+        <article class="service-card" tabindex="0">
+          <h3><i class="fas fa-hashtag" aria-hidden="true"></i> Numerología</h3>
+          <ul class="service-list">
+            <li>Cálculo de número de vida</li>
+            <li>Análisis de nombre</li>
+            <li>Compatibilidad numérica</li>
+            <li>Ciclos personales</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-        <!-- Sección Pagos -->
-        <section class="payment" id="donaciones" data-aos="fade-up">
-            <h2 class="section-title"><i class="fas fa-hand-holding-heart"></i> Ofrendas Voluntarias</h2>
-            <div class="payment-methods">
-                <a href="TU_LINK_PAYPAL" class="btn-payment">
-                    <i class="fab fa-paypal"></i> PayPal
-                </a>
-                <a href="TU_LINK_TRANSFERENCIA" class="btn-payment">
-                    <i class="fas fa-university"></i> Transferencia
-                </a>
-            </div>
-        </section>
-    </main>
+    <!-- Sección de Ofertas Voluntarias / Pagos -->
+    <section class="payment" id="donaciones" data-aos="fade-up">
+      <h2 class="section-title"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Ofrendas Voluntarias</h2>
+      <div class="payment-methods">
+        <a href="TU_LINK_PAYPAL" class="btn-payment" aria-label="Pagar con PayPal">
+          <i class="fab fa-paypal" aria-hidden="true"></i> PayPal
+        </a>
+        <a href="TU_LINK_TRANSFERENCIA" class="btn-payment" aria-label="Realizar transferencia bancaria">
+          <i class="fas fa-university" aria-hidden="true"></i> Transferencia
+        </a>
+      </div>
+    </section>
+  </main>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="app.js"></script>
+  <!-- Scripts: Particles.js, AOS y el script personalizado -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
