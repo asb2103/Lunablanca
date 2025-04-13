@@ -1,11 +1,12 @@
-// Mantener el JS original que enviaste
 document.addEventListener('DOMContentLoaded', function() {
+    // Animaciones al hacer scroll
     AOS.init({
         duration: 800,
         once: true,
         easing: 'ease-out-back'
     });
 
+    // Configuración de partículas
     particlesJS('particles-js', {
         particles: {
             number: { value: 70, density: { enable: true, value_area: 800 }},
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Smooth scroll para navegación
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
