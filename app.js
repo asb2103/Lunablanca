@@ -1,214 +1,96 @@
-:root {
-  --primary-color: #8B0000;
-  --secondary-color: #FFD700;
-  --dark-bg: #0a0a0a;
-  --text-light: #f8f8f8;
-  --accent: #4B0082;
-}
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    // Inicialización AOS
+    AOS.init({
+      duration: 1000,
+      once: false,
+      easing: 'ease-in-out-back'
+    });
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+    // Configuración Partículas
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 100, density: { enable: true, value_area: 800 } },
+        color: { value: ['#8B0000', '#FFD700', '#4B0082'] },
+        shape: { type: 'circle' },
+        opacity: { value: 0.7 },
+        size: { value: 3 },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: 'none',
+          random: true,
+          outMode: 'bounce'
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' }
+        }
+      }
+    });
 
-body {
-  font-family: 'Arial', sans-serif;
-  background: var(--dark-bg);
-  color: var(--text-light);
-  line-height: 1.8;
-  overflow-x: hidden;
-}
+    // PayPal Integration
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '49.00'
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Ofrenda completada por ' + details.payer.name.given_name);
+        });
+      }
+    }).render('#paypal-button-container-49');
 
-/* Partículas */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-}
+    // Versiones para otros montos
+    [99, 'custom'].forEach(amount => {
+      paypal.Buttons({
+        style: { color: 'gold' },
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: amount === 'custom' ? prompt('Ingrese monto:') : amount.toString()
+              }
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          actions.order.capture().then(details => {
+            alert(`Ofrenda de $${amount} USD completada`);
+          });
+        }
+      }).render(`#paypal-button-container-${amount}`);
+    });
 
-/* Header */
-header {
-  background: rgba(10, 10, 10, 0.95);
-  padding: 1rem;
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    // Form Handler
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      // Aquí integrar servicio de email
+      alert('Consulta enviada. Te contactaremos en 24h.');
+      e.target.reset();
+    });
 
-.logo h1 {
-  color: var(--secondary-color);
-  font-size: 2.2rem;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-}
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, null, this.href);
+        }
+      });
+    });
 
-/* Navegación */
-nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
-}
-
-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-nav a:hover {
-  color: var(--secondary-color);
-  text-shadow: 0 0 10px var(--secondary-color);
-}
-
-/* Sección Hero */
-.hero {
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('https://images.unsplash.com/photo-1507525428033-7149db4ec7dc') center/cover;
-}
-
-.hero-content h2 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
-}
-
-.cta-btn {
-  background: var(--primary-color);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-}
-
-.cta-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px var(--primary-color);
-}
-
-/* Servicios */
-.grid-servicios {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.servicio {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 15px;
-  border: 1px solid var(--accent);
-  transition: all 0.3s ease;
-}
-
-.servicio:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.precio {
-  color: var(--secondary-color);
-  font-weight: bold;
-  display: block;
-  margin-top: 1rem;
-}
-
-/* PayPal */
-.paypal-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.ofrenda {
-  background: rgba(0, 100, 0, 0.1);
-  padding: 2rem;
-  border: 2px solid var(--secondary-color);
-  border-radius: 10px;
-}
-
-/* Testimonios */
-.testimonio-carousel {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  padding: 2rem;
-}
-
-.testimonio {
-  min-width: 300px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-left: 4px solid var(--primary-color);
-}
-
-/* Contacto */
-form {
-  max-width: 600px;
-  margin: 2rem auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-input, textarea {
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--accent);
-  color: white;
-}
-
-button[type="submit"] {
-  background: var(--primary-color);
-  color: white;
-  padding: 1rem;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background: #6B0000;
-}
-
-/* WhatsApp */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #25D366;
-  color: white;
-  padding: 1rem;
-  border-radius: 50%;
-  font-size: 2rem;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-btn:hover {
-  transform: scale(1.1) rotate(15deg);
-}
-
-@media (max-width: 768px) {
-  .grid-servicios, .paypal-grid {
-    grid-template-columns: 1fr;
+  } catch(error) {
+    console.error('Error de inicialización:', error);
   }
-  
-  .hero-content h2 {
-    font-size: 2.5rem;
-  }
-}
+});
