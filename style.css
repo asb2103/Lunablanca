@@ -5,74 +5,32 @@ body {
   overflow-x: hidden;
   color: white;
 }
-
-header, nav, section, footer {
-  padding: 20px;
-  max-width: 960px;
-  margin: auto;
-}
-
-header h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.2em;
-}
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  background: #1a1a1a;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-}
-
-.container section {
-  margin-top: 40px;
-}
-
-input, textarea, button {
-  display: block;
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  font-family: inherit;
-}
-
-button {
-  background-color: #8e44ad;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background-color: #732d91;
-}
-
-.testimonial {
+.bubble {
+  position: absolute;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  animation: float 25s infinite ease-in-out;
 }
-
-.paypal-btn {
-  background-color: #ffc439;
-  padding: 12px 20px;
-  border-radius: 10px;
-  display: inline-block;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
 }
-
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -90,34 +48,45 @@ button:hover {
   text-decoration: none;
   font-size: 28px;
 }
-
-.fade-in {
-  animation: fadeIn 1.2s ease-in-out;
+form {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.bubble {
-  position: absolute;
-  border-radius: 50%;
+input, textarea, button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-family: inherit;
   background: rgba(255, 255, 255, 0.1);
-  animation: float 20s infinite ease-in;
-  z-index: 0;
+  color: white;
 }
-
-@keyframes float {
-  0% {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-10vh);
-    opacity: 0;
-  }
+button {
+  background-color: #8e44ad;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #732d91;
+}
+.paypal-btn {
+  background-color: #ffc439;
+  padding: 12px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+.servicio-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
 }
