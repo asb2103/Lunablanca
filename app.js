@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init({ duration: 1000, once: false, easing: 'ease-in-out' });
 
@@ -8,9 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             shape: { type: 'circle' },
             opacity: { value: 0.7 },
             size: { value: 3 },
-            move: {
-                enable: true, speed: 1.2, direction: 'none', random: true, outMode: 'bounce'
-            }
+            move: { enable: true, speed: 1.2, direction: 'none', random: true, outMode: 'bounce' }
         },
         interactivity: {
             events: {
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (typeof paypal !== 'undefined') {
         paypal.Buttons({
-            style: { color: 'blue', shape: 'pill' },
+            style: { color: 'gold', shape: 'pill' },
             createOrder: (data, actions) => {
                 return actions.order.create({
                     purchase_units: [{ amount: { value: '10' } }]
@@ -30,13 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             onApprove: (data, actions) => {
                 return actions.order.capture().then(details => {
-                    alert('Gracias por tu ofrenda voluntaria.');
+                    alert('Gracias por tu ofrenda de luz. ¡Bendiciones!');
                 });
             }
-        }).render('#paypal-voluntario');
+        }).render('#paypal-donacion');
     }
-
-    document.querySelector('.cta-btn').addEventListener('click', () => {
-        window.location.href = '#ofrendas';
-    });
 });
