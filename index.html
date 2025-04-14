@@ -3,86 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rituales de amor y protección con magia ancestral - Luna Blanca">
-    <meta name="keywords" content="amarres de amor, magia blanca, rituales ancestrales, protección espiritual">
+    <meta name="description" content="Luna Blanca - Rituales ancestrales y amarres de amor con energía positiva. Ofrendas voluntarias para mantener nuestra conexión espiritual">
+    <meta name="keywords" content="amarres de amor, rituales ancestrales, magia blanca, energía positiva, ofrendas espirituales">
     <meta name="author" content="Luna Blanca">
-    <meta property="og:title" content="Luna Blanca - Magia y Rituales Ancestrales">
-    <meta property="og:description" content="Transforma tu vida con nuestros rituales de amor y protección">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="img/og-image.jpg">
-    <meta property="og:url" content="https://lunablanca.fun">
+    <title>Luna Blanca - Energía y Amor Puro</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Luna Blanca | Rituales Ancestrales</title>
 </head>
 <body>
     <div id="particles-js"></div>
-
+    
+    <!-- Botón WhatsApp -->
     <a href="https://wa.me/573001112233" class="whatsapp-btn" target="_blank" aria-label="Chat por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <header data-aos="fade-down">
-        <div class="logo">
+        <div class="logo-container">
             <h1><i class="fas fa-moon"></i> Luna Blanca</h1>
-            <p>Magia Ancestral con Propósito</p>
+            <p>Magia Ancestral con Energía Positiva</p>
         </div>
         <nav>
             <ul>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#ofrenda">Ofrendas</a></li>
+                <li><a href="#rituales"><i class="fas fa-hand-sparkles"></i> Rituales</a></li>
+                <li><a href="#testimonios"><i class="fas fa-star"></i> Testimonios</a></li>
+                <li><a href="#ofrendas"><i class="fas fa-heart"></i> Ofrendas</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="servicios" class="section" data-aos="zoom-in">
-            <h2>Nuestros Servicios</h2>
-            <div class="grid-servicios">
-                <div class="servicio">
-                    <i class="fas fa-heart"></i>
-                    <h3>Amarres de Amor</h3>
-                    <p>Unión espiritual duradera bajo las fases lunares</p>
+        <!-- Sección Hero -->
+        <section class="hero" data-aos="zoom-in">
+            <div class="hero-content">
+                <h2>Transforma tu energía amorosa</h2>
+                <p>Resultados en armonía con el universo</p>
+                <button class="cta-btn">Consulta Gratis</button>
+            </div>
+        </section>
+
+        <!-- Rituales -->
+        <section id="rituales" class="rituales" data-aos="fade-up">
+            <h2><i class="fas fa-book-open"></i> Nuestros Rituales</h2>
+            <div class="grid-rituales">
+                <div class="ritual">
+                    <i class="fas fa-heart-circle-plus"></i>
+                    <h3>Amarre de Luna Llena</h3>
+                    <p>Unión espiritual bajo la energía lunar</p>
                 </div>
-                <div class="servicio">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Protección Energética</h3>
-                    <p>Escudo contra malas vibras y envidias</p>
+                <div class="ritual">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Endulzamiento Energético</h3>
+                    <p>Armonización de relaciones conflictivas</p>
+                </div>
+                <div class="ritual">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Protección Aural</h3>
+                    <p>Escudo contra energías negativas</p>
                 </div>
             </div>
         </section>
 
-        <section id="testimonios" class="section" data-aos="fade-up">
-            <h2>Testimonios Reales</h2>
-            <div class="testimonios-container">
+        <!-- Ofrendas Voluntarias -->
+        <section id="ofrendas" class="ofrendas" data-aos="fade-up">
+            <h2><i class="fas fa-hand-holding-water"></i> Ofrendas Voluntarias</h2>
+            <div class="ofrendas-container">
+                <div class="ofrenda-card">
+                    <h3>Ofrenda Básica</h3>
+                    <p>Apoya nuestra energía</p>
+                    <div class="paypal-btn" id="paypal-basico"></div>
+                </div>
+                <div class="ofrenda-card">
+                    <h3>Ofrenda Lunar</h3>
+                    <p>Fortalece la conexión</p>
+                    <div class="paypal-btn" id="paypal-lunar"></div>
+                </div>
+                <div class="ofrenda-card">
+                    <h3>Ofrenda Personalizada</h3>
+                    <p>Monto libre</p>
+                    <div class="paypal-btn" id="paypal-personalizado"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section id="testimonios" class="testimonios" data-aos="fade-up">
+            <h2><i class="fas fa-comments"></i> Voces del Alma</h2>
+            <div class="testimonios-grid">
                 <div class="testimonio">
-                    <p>"Mi matrimonio se salvó en 3 semanas" - María</p>
+                    <p>"Recuperé mi matrimonio en 3 semanas" - Ana</p>
                 </div>
                 <div class="testimonio">
                     <p>"La energía positiva cambió mi vida" - Carlos</p>
                 </div>
             </div>
         </section>
-
-        <section id="ofrenda" class="section" data-aos="fade-up">
-            <h2>Ofrendas Voluntarias</h2>
-            <div class="ofrendas-grid">
-                <div class="ofrenda">
-                    <h3>Ofrenda Básica</h3>
-                    <div id="paypal-basico"></div>
-                </div>
-                <div class="ofrenda">
-                    <h3>Ofrenda Lunar</h3>
-                    <div id="paypal-lunar"></div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <footer data-aos="fade-up">
-        <p>© 2024 Luna Blanca - Todos los derechos reservados</p>
+    <footer>
+        <p>© 2024 Luna Blanca - Todos los derechos reservados<br>
+        <small>Practicamos magia con ética y responsabilidad</small></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
