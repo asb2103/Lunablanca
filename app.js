@@ -1,63 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar AOS
+    // Inicialización AOS
     AOS.init({
-        duration: 800,
+        duration: 1000,
         once: false,
         easing: 'ease-in-out'
     });
 
-    // Configurar partículas
-    if(typeof particlesJS === 'function') {
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 100, density: { enable: true, value_area: 800 } },
-                color: { value: ['#2E3192', '#A3A9FF', '#FFD700'] },
-                shape: { type: 'circle' },
-                opacity: { value: 0.7 },
-                size: { value: 3 },
-                move: {
-                    enable: true,
-                    speed: 1.5,
-                    direction: 'none',
-                    random: true,
-                    out_mode: 'bounce'
-                }
-            },
-            interactivity: {
-                events: {
-                    onhover: { enable: true, mode: 'repulse' },
-                    onclick: { enable: true, mode: 'push' }
-                }
+    // Configuración Partículas
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 120, density: { enable: true, value_area: 800 } },
+            color: { value: ['#2E3192', '#A3A9FF', '#FFFFFF'] },
+            shape: { type: 'circle' },
+            opacity: { value: 0.7 },
+            size: { value: 3 },
+            move: {
+                enable: true,
+                speed: 1.2,
+                direction: 'none',
+                random: true,
+                outMode: 'bounce'
             }
-        });
-    }
+        },
+        interactivity: {
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' }
+            }
+        }
+    });
 
     // Integración PayPal
-    if(typeof paypal !== 'undefined') {
+    const loadPaypalButtons = () => {
         // Ofrenda Básica ($29)
         paypal.Buttons({
             style: { color: 'blue', shape: 'pill' },
             createOrder: (data, actions) => {
                 return actions.order.create({
                     purchase_units: [{
-                        amount: { value: '29.00' }
+                        amount: { value: '29' }
                     }]
                 });
             },
             onApprove: (data, actions) => {
                 return actions.order.capture().then(details => {
-                    alert('Ofrenda básica completada. ¡Gracias por tu apoyo!');
+                    alert('Ofrenda básica completada. ¡Gracias!');
                 });
             }
         }).render('#paypal-basico');
 
         // Ofrenda Lunar ($79)
         paypal.Buttons({
-            style: { color: 'gold', shape: 'pill' },
+            style: { color: 'silver', shape: 'pill' },
             createOrder: (data, actions) => {
                 return actions.order.create({
                     purchase_units: [{
-                        amount: { value: '79.00' }
+                        amount: { value: '79' }
                     }]
                 });
             },
@@ -67,19 +65,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         }).render('#paypal-lunar');
-    }
 
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if(target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+        // Ofrenda Personalizada
+        paypal.Buttons({
+            style: { color: 'gold', shape: 'pill' },
+            createOrder: (data, actions) => {
+                const amount = prompt('Ingresa el monto de tu ofrenda (USD):');
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: { value: amount || '10' }
+                    }]
+                });
+            },
+            onApprove: (data, actions) => {
+                return actions.order.capture().then(details => {
+                    alert(`Ofrenda de $${details.purchase_units[0].amount.value} completada. Gracias por tu generosidad.`);
                 });
             }
-        });
+        }).render('#paypal-personalizado');
+    }
+
+    // Cargar botones PayPal cuando el SDK esté listo
+    if(typeof paypal !== 'undefined') {
+        loadPaypalButtons();
+    } else {
+        window.addEventListener('paypal-sdk-loaded', loadPaypalButtons);
+    }
+
+    // Manejo del CTA
+    document.querySelector('.cta-btn').addEventListener('click', () => {
+        window.location.href = '#ofrendas';
     });
 });
