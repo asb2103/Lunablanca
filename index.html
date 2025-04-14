@@ -14,69 +14,14 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap">
   <title>Luna Blanca | Amarres de Amor y Rituales Ancestrales</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background: #0d0d0d;
-      overflow-x: hidden;
-    }
-    .bubble {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      animation: float 20s infinite ease-in;
-    }
-    @keyframes float {
-      0% {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-10vh);
-        opacity: 0;
-      }
-    }
-    .fade-in {
-      animation: fadeIn 1.2s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      z-index: 1000;
-      text-decoration: none;
-      font-size: 28px;
-    }
-  </style>
 </head>
 <body>
-  <!-- Fondo animado de burbujas -->
   <div id="bubbles"></div>
 
   <header class="fade-in">
     <h1>Luna Blanca</h1>
     <p>Rituales de Amor, Protección y Magia Ancestral</p>
-    <select id="languageSelector">
-      <option value="es">Español</option>
-      <option value="en">English</option>
-    </select>
+    <div id="languageSelector"></div>
   </header>
 
   <nav class="fade-in">
@@ -89,22 +34,25 @@
   <main class="container fade-in">
     <section id="servicios">
       <h2>Servicios</h2>
+      <img src="https://cdn.pixabay.com/photo/2017/09/28/13/42/fortune-2796088_1280.jpg" alt="Ritual de amor" class="servicio-img">
       <p>Ofrecemos amarres de amor, endulzamientos, rituales de protección, apertura de caminos, limpieza espiritual y más. Nuestra experiencia en magia blanca y ancestral nos permite ofrecer resultados reales y seguros.</p>
     </section>
 
     <section id="testimonios">
       <h2>Testimonios</h2>
-      <div class="testimonial">
-        <p><strong>María G. - Bogotá</strong></p>
-        <p>"Estaba desesperada por recuperar a mi pareja. Gracias a Luna Blanca, volvimos a estar juntos en menos de dos semanas. Estoy eternamente agradecida."</p>
-      </div>
-      <div class="testimonial">
-        <p><strong>Carlos P. - Medellín</strong></p>
-        <p>"El ritual de limpieza me ayudó a salir de una racha de mala suerte. Ahora me siento renovado y todo ha mejorado en mi vida."</p>
-      </div>
-      <div class="testimonial">
-        <p><strong>Andrea S. - Cali</strong></p>
-        <p>"Con el amarre que me realizaron, la persona que amo regresó y está más atento que nunca. No lo puedo creer, pero es real."</p>
+      <div id="testimoniosContainer">
+        <div class="testimonial">
+          <p><strong>María G. - Bogotá</strong></p>
+          <p>"Estaba desesperada por recuperar a mi pareja. Gracias a Luna Blanca, volvimos a estar juntos en menos de dos semanas. Estoy eternamente agradecida."</p>
+        </div>
+        <div class="testimonial">
+          <p><strong>Carlos P. - Medellín</strong></p>
+          <p>"El ritual de limpieza me ayudó a salir de una racha de mala suerte. Ahora me siento renovado y todo ha mejorado en mi vida."</p>
+        </div>
+        <div class="testimonial">
+          <p><strong>Andrea S. - Cali</strong></p>
+          <p>"Con el amarre que me realizaron, la persona que amo regresó y está más atento que nunca. No lo puedo creer, pero es real."</p>
+        </div>
       </div>
     </section>
 
@@ -135,31 +83,44 @@
     <p>&copy; 2025 Luna Blanca - Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Botón flotante de WhatsApp -->
   <a href="https://wa.me/573001112233" class="whatsapp-float" target="_blank" title="Chatea con nosotros">
     💬
   </a>
 
+  <script src="scripts.js"></script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'languageSelector');
-    }
+    const form = document.getElementById('testimonioForm');
+    const testimoniosContainer = document.getElementById('testimoniosContainer');
 
-    // Crear burbujas de fondo
-    const bubblesContainer = document.getElementById('bubbles');
-    for (let i = 0; i < 40; i++) {
-      const bubble = document.createElement('div');
-      bubble.classList.add('bubble');
-      const size = Math.random() * 40 + 10;
-      bubble.style.width = size + 'px';
-      bubble.style.height = size + 'px';
-      bubble.style.left = Math.random() * 100 + 'vw';
-      bubble.style.top = Math.random() * 100 + 'vh';
-      bubble.style.animationDuration = (Math.random() * 20 + 10) + 's';
-      bubblesContainer.appendChild(bubble);
-    }
+    const cargarTestimonios = () => {
+      const testimoniosGuardados = JSON.parse(localStorage.getItem('testimonios')) || [];
+      testimoniosGuardados.forEach(t => agregarTestimonioAlDOM(t.nombre, t.ciudad, t.mensaje));
+    };
+
+    const agregarTestimonioAlDOM = (nombre, ciudad, mensaje) => {
+      const div = document.createElement('div');
+      div.className = 'testimonial';
+      div.innerHTML = `<p><strong>${nombre} - ${ciudad}</strong></p><p>"${mensaje}"</p>`;
+      testimoniosContainer.appendChild(div);
+    };
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const ciudad = document.getElementById('ciudad').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      agregarTestimonioAlDOM(nombre, ciudad, mensaje);
+
+      const nuevos = JSON.parse(localStorage.getItem('testimonios')) || [];
+      nuevos.push({ nombre, ciudad, mensaje });
+      localStorage.setItem('testimonios', JSON.stringify(nuevos));
+
+      form.reset();
+    });
+
+    window.onload = cargarTestimonios;
   </script>
-  <script src="script.js"></script>
 </body>
 </html>
