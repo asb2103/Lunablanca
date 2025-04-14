@@ -1,115 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luna Blanca - Rituales ancestrales y amarres de amor con energía positiva. Ofrendas voluntarias para mantener nuestra conexión espiritual">
-    <meta name="keywords" content="amarres de amor, rituales ancestrales, magia blanca, energía positiva, ofrendas espirituales">
-    <meta name="author" content="Luna Blanca">
-    <title>Luna Blanca - Energía y Amor Puro</title>
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rituales poderosos de amor, protección y prosperidad. Magia blanca y ancestral con resultados reales - Luna Blanca." />
+  <meta name="keywords" content="amarres de amor, magia blanca, rituales, protección espiritual, Luna Blanca, endulzamientos, tarot, hechizos" />
+  <meta name="author" content="Luna Blanca" />
+  <meta property="og:title" content="Luna Blanca - Magia y Rituales Ancestrales" />
+  <meta property="og:description" content="Recupera tu amor, protege tu energía y transforma tu vida con rituales de magia blanca." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="ruta-de-tu-imagen.jpg" />
+  <meta property="og:url" content="https://lunablanca.fun" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap">
+  <title>Luna Blanca | Amarres de Amor y Rituales Ancestrales</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: #0d0d0d;
+      overflow-x: hidden;
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 20s infinite ease-in;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+    .fade-in {
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+      font-size: 28px;
+    }
+  </style>
 </head>
 <body>
-    <div id="particles-js"></div>
-    
-    <!-- Botón WhatsApp -->
-    <a href="https://wa.me/573001112233" class="whatsapp-btn" target="_blank" aria-label="Chat por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+  <!-- Fondo animado de burbujas -->
+  <div id="bubbles"></div>
 
-    <header data-aos="fade-down">
-        <div class="logo-container">
-            <h1><i class="fas fa-moon"></i> Luna Blanca</h1>
-            <p>Magia Ancestral con Energía Positiva</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#rituales"><i class="fas fa-hand-sparkles"></i> Rituales</a></li>
-                <li><a href="#testimonios"><i class="fas fa-star"></i> Testimonios</a></li>
-                <li><a href="#ofrendas"><i class="fas fa-heart"></i> Ofrendas</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="fade-in">
+    <h1>Luna Blanca</h1>
+    <p>Rituales de Amor, Protección y Magia Ancestral</p>
+    <select id="languageSelector">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
+  </header>
 
-    <main>
-        <!-- Sección Hero -->
-        <section class="hero" data-aos="zoom-in">
-            <div class="hero-content">
-                <h2>Transforma tu energía amorosa</h2>
-                <p>Resultados en armonía con el universo</p>
-                <button class="cta-btn">Consulta Gratis</button>
-            </div>
-        </section>
+  <nav class="fade-in">
+    <a href="#servicios">Servicios</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#formulario">Escribe tu Testimonio</a>
+    <a href="#ofrenda">Ofrenda Voluntaria</a>
+  </nav>
 
-        <!-- Rituales -->
-        <section id="rituales" class="rituales" data-aos="fade-up">
-            <h2><i class="fas fa-book-open"></i> Nuestros Rituales</h2>
-            <div class="grid-rituales">
-                <div class="ritual">
-                    <i class="fas fa-heart-circle-plus"></i>
-                    <h3>Amarre de Luna Llena</h3>
-                    <p>Unión espiritual bajo la energía lunar</p>
-                </div>
-                <div class="ritual">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <h3>Endulzamiento Energético</h3>
-                    <p>Armonización de relaciones conflictivas</p>
-                </div>
-                <div class="ritual">
-                    <i class="fas fa-shield-halved"></i>
-                    <h3>Protección Aural</h3>
-                    <p>Escudo contra energías negativas</p>
-                </div>
-            </div>
-        </section>
+  <main class="container fade-in">
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <p>Ofrecemos amarres de amor, endulzamientos, rituales de protección, apertura de caminos, limpieza espiritual y más. Nuestra experiencia en magia blanca y ancestral nos permite ofrecer resultados reales y seguros.</p>
+    </section>
 
-        <!-- Ofrendas Voluntarias -->
-        <section id="ofrendas" class="ofrendas" data-aos="fade-up">
-            <h2><i class="fas fa-hand-holding-water"></i> Ofrendas Voluntarias</h2>
-            <div class="ofrendas-container">
-                <div class="ofrenda-card">
-                    <h3>Ofrenda Básica</h3>
-                    <p>Apoya nuestra energía</p>
-                    <div class="paypal-btn" id="paypal-basico"></div>
-                </div>
-                <div class="ofrenda-card">
-                    <h3>Ofrenda Lunar</h3>
-                    <p>Fortalece la conexión</p>
-                    <div class="paypal-btn" id="paypal-lunar"></div>
-                </div>
-                <div class="ofrenda-card">
-                    <h3>Ofrenda Personalizada</h3>
-                    <p>Monto libre</p>
-                    <div class="paypal-btn" id="paypal-personalizado"></div>
-                </div>
-            </div>
-        </section>
+    <section id="testimonios">
+      <h2>Testimonios</h2>
+      <div class="testimonial">
+        <p><strong>María G. - Bogotá</strong></p>
+        <p>"Estaba desesperada por recuperar a mi pareja. Gracias a Luna Blanca, volvimos a estar juntos en menos de dos semanas. Estoy eternamente agradecida."</p>
+      </div>
+      <div class="testimonial">
+        <p><strong>Carlos P. - Medellín</strong></p>
+        <p>"El ritual de limpieza me ayudó a salir de una racha de mala suerte. Ahora me siento renovado y todo ha mejorado en mi vida."</p>
+      </div>
+      <div class="testimonial">
+        <p><strong>Andrea S. - Cali</strong></p>
+        <p>"Con el amarre que me realizaron, la persona que amo regresó y está más atento que nunca. No lo puedo creer, pero es real."</p>
+      </div>
+    </section>
 
-        <!-- Testimonios -->
-        <section id="testimonios" class="testimonios" data-aos="fade-up">
-            <h2><i class="fas fa-comments"></i> Voces del Alma</h2>
-            <div class="testimonios-grid">
-                <div class="testimonio">
-                    <p>"Recuperé mi matrimonio en 3 semanas" - Ana</p>
-                </div>
-                <div class="testimonio">
-                    <p>"La energía positiva cambió mi vida" - Carlos</p>
-                </div>
-            </div>
-        </section>
-    </main>
+    <section id="formulario">
+      <h2>Escribe tu Testimonio</h2>
+      <form id="testimonioForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
 
-    <footer>
-        <p>© 2024 Luna Blanca - Todos los derechos reservados<br>
-        <small>Practicamos magia con ética y responsabilidad</small></p>
-    </footer>
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required />
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=USD"></script>
-    <script src="app.js"></script>
+        <label for="mensaje">Testimonio:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar Testimonio</button>
+      </form>
+    </section>
+
+    <section id="ofrenda">
+      <h2>Ofrenda Voluntaria</h2>
+      <p>Si sientes que nuestros rituales y ayuda espiritual te han servido, puedes hacer una ofrenda voluntaria para apoyar nuestro trabajo:</p>
+      <a href="AQUI_VA_EL_LINK_DE_PAYPAL" class="paypal-btn" target="_blank">Hacer Ofrenda</a>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Luna Blanca - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/573001112233" class="whatsapp-float" target="_blank" title="Chatea con nosotros">
+    💬
+  </a>
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'es', includedLanguages: 'en,es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'languageSelector');
+    }
+
+    // Crear burbujas de fondo
+    const bubblesContainer = document.getElementById('bubbles');
+    for (let i = 0; i < 40; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      const size = Math.random() * 40 + 10;
+      bubble.style.width = size + 'px';
+      bubble.style.height = size + 'px';
+      bubble.style.left = Math.random() * 100 + 'vw';
+      bubble.style.top = Math.random() * 100 + 'vh';
+      bubble.style.animationDuration = (Math.random() * 20 + 10) + 's';
+      bubblesContainer.appendChild(bubble);
+    }
+  </script>
+  <script src="script.js"></script>
 </body>
 </html>
