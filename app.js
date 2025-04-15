@@ -1,37 +1,44 @@
+// Slider de testimonios automático
+let testimonialIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial');
 
-document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({ duration: 1000, once: false, easing: 'ease-in-out' });
+function showNextTestimonial() {
+    testimonials[testimonialIndex].classList.remove('active');
+    testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+    testimonials[testimonialIndex].classList.add('active');
+}
 
-    particlesJS('particles-js', {
-        particles: {
-            number: { value: 120, density: { enable: true, value_area: 800 } },
-            color: { value: ['#2E3192', '#A3A9FF', '#FFFFFF'] },
-            shape: { type: 'circle' },
-            opacity: { value: 0.7 },
-            size: { value: 3 },
-            move: { enable: true, speed: 1.2, direction: 'none', random: true, outMode: 'bounce' }
-        },
-        interactivity: {
-            events: {
-                onhover: { enable: true, mode: 'repulse' },
-                onclick: { enable: true, mode: 'push' }
-            }
-        }
+setInterval(showNextTestimonial, 5000);
+
+// Smooth scroll para navegación
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
+});
 
-    if (typeof paypal !== 'undefined') {
-        paypal.Buttons({
-            style: { color: 'gold', shape: 'pill' },
-            createOrder: (data, actions) => {
-                return actions.order.create({
-                    purchase_units: [{ amount: { value: '10' } }]
-                });
-            },
-            onApprove: (data, actions) => {
-                return actions.order.capture().then(details => {
-                    alert('Gracias por tu ofrenda de luz. ¡Bendiciones!');
-                });
-            }
-        }).render('#paypal-donacion');
-    }
+// Mostrar formulario de consulta
+function showConsultationForm() {
+    // Lógica para mostrar modal/formulario
+    alert("Pronto será atendido por un especialista...");
+}
+
+// Efecto hover mejorado para tarjetas
+document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+    });
+});
+
+// Trackear clics en WhatsApp
+document.querySelector('.whatsapp-fixed').addEventListener('click', () => {
+    // Lógica para trackear conversión
+    console.log('Clic en WhatsApp');
 });
