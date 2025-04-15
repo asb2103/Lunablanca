@@ -3,82 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luna Blanca - Rituales ancestrales y amarres de amor con energía positiva. Ofrendas voluntarias para mantener nuestra conexión espiritual.">
-    <meta name="keywords" content="amarres de amor, rituales ancestrales, magia blanca, energía positiva, ofrendas espirituales, chamanismo, limpieza energética, tarot, protección espiritual">
-    <meta name="author" content="Luna Blanca">
-    <title>Luna Blanca - Energía y Amor Puro</title>
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Magia Ancestral | Soluciones Espirituales</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="particles-js"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo-magia.png" alt="Magia Ancestral">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
 
-    <a href="https://wa.me/573001112233" class="whatsapp-btn" target="_blank" aria-label="Chat por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Transforma Tu Vida con Magia Ancestral</h1>
+            <p>Soluciones definitivas en amor, protección y prosperidad</p>
+            <button class="cta-button" onclick="showConsultationForm()">Consulta Gratis Inmediata</button>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <h2>Nuestros Servicios Mágicos</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Amarres de Amor</h3>
+                <p>Rituales permanentes con garantía de resultados</p>
+            </div>
+            <!-- Más tarjetas de servicios -->
+        </div>
+    </section>
+
+    <section id="testimonios" class="testimonials">
+        <div class="testimonial-slider">
+            <div class="testimonial active">"¡Increíble! Resultados en 72 horas"</div>
+            <div class="testimonial">"Volvió después de 2 años, gracias!"</div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="guarantee-badge">
+            ✔️ 25 Años de Experiencia - Resultados Garantizados
+        </div>
+    </footer>
+
+    <a href="https://wa.me/123456789" class="whatsapp-fixed">
+        <img src="whatsapp-icon.svg" alt="WhatsApp">
     </a>
 
-    <header data-aos="fade-down">
-        <div class="logo-container">
-            <h1><i class="fas fa-moon"></i> Luna Blanca</h1>
-            <p>Magia Ancestral con Energía Positiva</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#rituales"><i class="fas fa-hand-sparkles"></i> Rituales</a></li>
-                <li><a href="#testimonios"><i class="fas fa-star"></i> Testimonios</a></li>
-                <li><a href="#ofrenda"><i class="fas fa-hand-holding-heart"></i> Ofrenda</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero" data-aos="zoom-in">
-            <div class="hero-content">
-                <h2>Transforma tu energía amorosa</h2>
-                <p>Resultados en armonía con el universo</p>
-                <button class="cta-btn" onclick="window.location.href='https://wa.me/573219673178';">Consulta Gratis</button>
-            </div>
-        </section>
-
-        <section id="rituales" class="rituales" data-aos="fade-up">
-            <h2><i class="fas fa-book-open"></i> Servicios Chamánicos</h2>
-            <div class="grid-rituales">
-                <div class="ritual"><i class="fas fa-heart-circle-plus"></i><h3>Amarre de Luna Llena</h3><p>Unión espiritual bajo la energía lunar</p></div>
-                <div class="ritual"><i class="fas fa-hand-holding-heart"></i><h3>Endulzamiento Energético</h3><p>Armonización de relaciones conflictivas</p></div>
-                <div class="ritual"><i class="fas fa-shield-halved"></i><h3>Protección Aural</h3><p>Escudo contra energías negativas</p></div>
-                <div class="ritual"><i class="fas fa-fire"></i><h3>Limpieza con fuego</h3><p>Purificación total con fuego sagrado</p></div>
-                <div class="ritual"><i class="fas fa-leaf"></i><h3>Baños de hierbas</h3><p>Renueva tu energía con hierbas ancestrales</p></div>
-                <div class="ritual"><i class="fas fa-eye"></i><h3>Lectura del Tarot</h3><p>Descubre tu destino a través del tarot</p></div>
-                <div class="ritual"><i class="fas fa-sun"></i><h3>Sanación con el sol</h3><p>Rituales de energía solar para revitalizarte</p></div>
-                <div class="ritual"><i class="fas fa-magic"></i><h3>Alineación de chakras</h3><p>Equilibra tu energía interior</p></div>
-            </div>
-        </section>
-
-        <section id="ofrenda" class="ofrendas" data-aos="fade-up">
-            <h2><i class="fas fa-hand-holding-water"></i> Ofrenda Voluntaria</h2>
-            <p style="text-align:center">Tu energía nos ayuda a continuar este camino espiritual. Haz tu ofrenda voluntaria con PayPal:</p>
-            <div style="display:flex; justify-content:center; margin:2rem 0;">
-                <div id="paypal-donacion"></div>
-            </div>
-            <p style="text-align:center">O por banco: <strong>Cuenta de ahorros Bancolombia 12345678901</strong></p>
-        </section>
-
-        <section id="testimonios" class="testimonios" data-aos="fade-up">
-            <h2><i class="fas fa-comments"></i> Voces del Alma</h2>
-            <div class="testimonios-grid">
-                <div class="testimonio"><p>"Recuperé mi matrimonio en 3 semanas" - Ana</p></div>
-                <div class="testimonio"><p>"La energía positiva cambió mi vida" - Carlos</p></div>
-            </div>
-        </section>
-    </main>
-
-    <footer><p>© 2024 Luna Blanca - Todos los derechos reservados<br><small>Practicamos magia con ética y responsabilidad</small></p></footer>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
-    <script src="app.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
