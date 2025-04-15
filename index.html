@@ -1,61 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magia Ancestral | Soluciones Espirituales</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Magia Ancestral ofrece soluciones espirituales definitivas en amor, protección y prosperidad. Descubre nuestros servicios y testimonios.">
+  <title>Magia Ancestral | Soluciones Espirituales</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo-magia.png" alt="Magia Ancestral">
-        </div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+  <!-- Encabezado principal con navegación -->
+  <header class="navbar" role="banner" aria-label="Navegación principal">
+    <div class="logo">
+      <img src="logo-magia.png" alt="Logo Magia Ancestral">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
+  </header>
 
+  <!-- Sección principal de bienvenida -->
+  <main>
     <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Transforma Tu Vida con Magia Ancestral</h1>
-            <p>Soluciones definitivas en amor, protección y prosperidad</p>
-            <button class="cta-button" onclick="showConsultationForm()">Consulta Gratis Inmediata</button>
-        </div>
+      <div class="hero-content">
+        <h1>Transforma Tu Vida con Magia Ancestral</h1>
+        <p>Soluciones definitivas en amor, protección y prosperidad</p>
+        <button type="button" class="cta-button" onclick="showConsultationForm()">Consulta Gratis Inmediata</button>
+      </div>
     </section>
 
+    <!-- Sección de servicios -->
     <section id="servicios" class="services">
-        <h2>Nuestros Servicios Mágicos</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Amarres de Amor</h3>
-                <p>Rituales permanentes con garantía de resultados</p>
-            </div>
-            <!-- Más tarjetas de servicios -->
-        </div>
+      <h2>Nuestros Servicios Mágicos</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>Amarres de Amor</h3>
+          <p>Rituales permanentes con garantía de resultados.</p>
+        </article>
+        <!-- Se pueden agregar más tarjetas de servicios aquí -->
+      </div>
     </section>
 
+    <!-- Sección de testimonios -->
     <section id="testimonios" class="testimonials">
-        <div class="testimonial-slider">
-            <div class="testimonial active">"¡Increíble! Resultados en 72 horas"</div>
-            <div class="testimonial">"Volvió después de 2 años, gracias!"</div>
-        </div>
+      <div class="testimonial-slider">
+        <div class="testimonial active">"¡Increíble! Resultados en 72 horas"</div>
+        <div class="testimonial">"Volvió después de 2 años, ¡gracias!"</div>
+      </div>
     </section>
+  </main>
 
-    <footer id="contacto">
-        <div class="guarantee-badge">
-            ✔️ 25 Años de Experiencia - Resultados Garantizados
-        </div>
-    </footer>
+  <!-- Pie de página con contacto -->
+  <footer id="contacto">
+    <div class="guarantee-badge">
+      ✔️ 25 Años de Experiencia - Resultados Garantizados
+    </div>
+  </footer>
 
-    <a href="https://wa.me/123456789" class="whatsapp-fixed">
-        <img src="whatsapp-icon.svg" alt="WhatsApp">
-    </a>
+  <!-- Botón fijo para WhatsApp -->
+  <a href="https://wa.me/123456789" class="whatsapp-fixed" aria-label="Chat en WhatsApp">
+    <img src="whatsapp-icon.svg" alt="Icono de WhatsApp">
+  </a>
 
-    <script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
