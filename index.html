@@ -1,81 +1,170 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="es" class="no-js">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Luna Blanca - Chamanismo Profesional: Rituales ancestrales y servicios espirituales">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Luna Blanca – Rituales ancestrales, chamanismo y magia ancestral con resultados garantizados.">
   <title>Luna Blanca | Magia Ancestral & Servicios Chamánicos</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Roboto:wght@400;500&display=swap" as="style">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
 
+  <!-- Fuentes y Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- HEADER / NAVEGACIÓN -->
   <header class="navbar">
     <div class="container">
       <a href="#inicio" class="logo">
-        <img src="logo-lunablanca.webp" alt="Luna Blanca" width="120" height="60">
+        <img src="images/logo-lunablanca.webp" alt="Logo Luna Blanca">
       </a>
       <nav class="menu">
-        <ul class="menu-list">
+        <ul>
           <li><a href="#inicio" class="nav-link active">Inicio</a></li>
           <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#galeria" class="nav-link">Galería</a></li>
           <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" aria-label="Menú móvil">
-        <span class="hamburger"></span>
-      </button>
+      <button class="menu-toggle" aria-label="Menú móvil"><i class="fa fa-bars"></i></button>
     </div>
   </header>
 
+  <!-- HERO SLIDESHOW -->
   <section id="inicio" class="hero">
-    <div class="hero-media">
-      <video autoplay muted loop playsinline poster="hero-poster.webp">
-        <source src="hero-bg.mp4" type="video/mp4">
-      </video>
-      <div class="hero-overlay"></div>
+    <div class="hero-slides">
+      <div class="slide active" style="background-image:url('images/imagen1.jpg')"></div>
+      <div class="slide"       style="background-image:url('images/imagen2.jpg')"></div>
+      <div class="slide"       style="background-image:url('images/imagen3.jpg')"></div>
     </div>
+    <div class="hero-overlay"></div>
     <div class="hero-content container">
       <h1>Reconecta con tu Esencia Espiritual</h1>
+      <p>Rituales ancestrales y servicios chamánicos personalizados</p>
       <button class="btn cta-main" onclick="showConsultationForm()">Consulta Gratuita</button>
     </div>
   </section>
 
-  <section id="servicios" class="services">
-    <div class="container">
-      <h2>Nuestros Rituales</h2>
-      <div class="service-grid">
-        <!-- Servicios aquí -->
-      </div>
+  <!-- SERVICIOS -->
+  <section id="servicios" class="services container">
+    <h2 class="section-title">Nuestros Rituales</h2>
+    <div class="service-grid">
+      <article class="service-card animate-on-scroll">
+        <i class="fa-solid fa-heart icon"></i>
+        <h3>Amarres de Amor</h3>
+        <p>Reaviva la llama de tu relación con rituales seguros y efectivos.</p>
+      </article>
+      <article class="service-card animate-on-scroll">
+        <i class="fa-solid fa-broom icon"></i>
+        <h3>Limpiezas Energéticas</h3>
+        <p>Elimina cargas negativas y recupera tu paz interior.</p>
+      </article>
+      <article class="service-card animate-on-scroll">
+        <i class="fa-solid fa-crystal-ball icon"></i>
+        <h3>Lectura de Tarot</h3>
+        <p>Descubre tu camino y toma decisiones con claridad.</p>
+      </article>
+      <article class="service-card animate-on-scroll">
+        <i class="fa-solid fa-shield-halved icon"></i>
+        <h3>Protección Espiritual</h3>
+        <p>Escudos energéticos para resguardar tu hogar y tu aura.</p>
+      </article>
+      <article class="service-card animate-on-scroll">
+        <i class="fa-solid fa-sun icon"></i>
+        <h3>Astrología Personalizada</h3>
+        <p>Análisis profundo de tu carta astral y tránsitos planetarios.</p>
+      </article>
+      <article class="service-card animate-on-scroll">
+        <i class="fa-solid fa-hands-praying icon"></i>
+        <h3>Consultas Chamánicas</h3>
+        <p>Orientación espiritual con sabiduría ancestral.</p>
+      </article>
     </div>
   </section>
 
+  <!-- GALERÍA DE RITUALES -->
+  <section id="galeria" class="gallery container">
+    <h2 class="section-title">Galería de Rituales</h2>
+    <div class="gallery-grid">
+      <img src="images/imagen1.jpg" alt="Ritual 1" class="gallery-item animate-on-scroll">
+      <img src="images/imagen2.jpg" alt="Ritual 2" class="gallery-item animate-on-scroll">
+      <img src="images/imagen3.jpg" alt="Ritual 3" class="gallery-item animate-on-scroll">
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
   <section id="testimonios" class="testimonials">
     <div class="container">
-      <h2>Historias de Transformación</h2>
-      <div class="testimonial-carousel">
-        <!-- Testimonios aquí -->
+      <h2 class="section-title">Historias de Transformación</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial active">
+          <p>“En una semana mi vida cambió: recuperé el amor perdido.”</p>
+          <span>- Mariana R.</span>
+        </div>
+        <div class="testimonial">
+          <p>“Los bloqueos desaparecieron y ahora siento libertad.”</p>
+          <span>- Jorge L.</span>
+        </div>
+        <div class="testimonial">
+          <p>“Precisión total en la lectura de tarot, ¡impresionante!”</p>
+          <span>- Andrea G.</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer id="contacto" class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Contenido del footer -->
+  <!-- FIXED WHATSAPP CTA -->
+  <a href="https://wa.me/5215512345678" class="whatsapp-fixed" aria-label="Chatea con nosotros en WhatsApp">
+    <i class="fa fa-whatsapp"></i>
+  </a>
+
+  <!-- FOOTER / CONTACTO -->
+  <footer id="contacto" class="footer container">
+    <div class="footer-grid">
+      <div>
+        <h3>Contacto</h3>
+        <p>Correo: contacto@lunablanca.fun<br>Tel: +52 1 55 1234 5678</p>
+      </div>
+      <div>
+        <h3>Redes Sociales</h3>
+        <p>
+          <a href="#"><i class="fa fa-facebook-f"></i> Facebook</a><br>
+          <a href="#"><i class="fa fa-instagram"></i> Instagram</a><br>
+          <a href="#"><i class="fa fa-tiktok"></i> TikTok</a>
+        </p>
+      </div>
+      <div>
+        <h3>Garantía</h3>
+        <p>✔️ 25 años de experiencia<br>✔️ Resultados garantizados</p>
       </div>
     </div>
+    <p class="copy">© 2025 Luna Blanca. Todos los derechos reservados.</p>
   </footer>
 
-  <div class="fixed-cta">
-    <a href="https://wa.me/5215512345678" class="whatsapp-cta">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+  <!-- MODAL CONSULTA -->
+  <div id="modal-consulta" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar">&times;</button>
+      <h3>Solicitud de Consulta</h3>
+      <form id="form-consulta">
+        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <textarea name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </div>
   </div>
 
+  <!-- Scripts -->
   <script src="app.js"></script>
 </body>
 </html>
