@@ -1,53 +1,279 @@
-// Asegurarse de que el DOM esté completamente cargado antes de ejecutar el código
-document.addEventListener('DOMContentLoaded', () => {
-  // Slider de testimonios automático
-  let testimonialIndex = 0;
-  const testimonials = document.querySelectorAll('.testimonial');
+/* style.css */
 
-  function showNextTestimonial() {
-    // Verifica que existan testimonios
-    if (testimonials.length === 0) return;
-    testimonials[testimonialIndex].classList.remove('active');
-    testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-    testimonials[testimonialIndex].classList.add('active');
-  }
+/* Variables de tema */
+:root {
+  --primary: #5d3fd3;
+  --accent: #f4c430;
+  --bg-dark: #1b1b2f;
+  --bg-light: #f5f5f5;
+  --text-light: #ffffff;
+  --text-dark: #222222;
+  --transition: 0.3s ease;
+}
 
-  // Cambiar testimonio cada 5 segundos
-  setInterval(showNextTestimonial, 5000);
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
 
-  // Smooth scroll para navegación en anclas
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
+/* Contenedor */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
 
-  // Efecto hover mejorado para tarjetas de servicio
-  document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-10px)';
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'translateY(0)';
-    });
-  });
+/* Navbar */
+.navbar {
+  background: var(--bg-dark);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar .logo img {
+  height: 50px;
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.menu a:hover {
+  color: var(--accent);
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+}
 
-  // Trackear clics en WhatsApp para conversión
-  const whatsappBtn = document.querySelector('.whatsapp-fixed');
-  if (whatsappBtn) {
-    whatsappBtn.addEventListener('click', () => {
-      console.log('Clic en WhatsApp');
-      // Aquí se podría agregar lógica de seguimiento/conversión
-    });
-  }
-});
+/* Hero */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url('hero-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 27, 47, 0.7);
+}
+.hero-content {
+  position: relative;
+  color: var(--text-light);
+  max-width: 600px;
+  animation: fadeInUp 1s;
+}
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.cta {
+  background: var(--accent);
+  color: var(--bg-dark);
+  font-weight: 600;
+}
+.cta:hover {
+  background: #e0b027;
+  transform: translateY(-3px);
+}
 
-// Función para mostrar el formulario de consulta
-function showConsultationForm() {
-  // Aquí se puede integrar la lógica para mostrar un modal o formulario
-  alert("Pronto será atendido por un especialista...");
+/* Servicios */
+.services {
+  padding: 4rem 0;
+  text-align: center;
+}
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--bg-dark);
+}
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.service-card {
+  background: var(--text-light);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.service-card .icon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.service-card h3 {
+  margin-bottom: 0.5rem;
+}
+.service-card p {
+  font-size: 0.95rem;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Testimonios */
+.testimonials {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 4rem 0;
+}
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.testimonial-slider {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  overflow: hidden;
+}
+.testimonial {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  padding: 1rem 2rem;
+  text-align: center;
+  transition: opacity var(--transition);
+}
+.testimonial.active {
+  opacity: 1;
+}
+.testimonial p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.testimonial span {
+  font-weight: 700;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal.active {
+  display: flex;
+}
+.modal-content {
+  background: var(--text-light);
+  padding: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.modal-content form input,
+.modal-content form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+.modal-content form .btn {
+  width: 100%;
+}
+
+/* WhatsApp fijo */
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #25D366;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform var(--transition);
+}
+.whatsapp-fixed:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  padding: 2rem 0;
+}
+.footer .footer-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer .footer-info img {
+  height: 60px;
+}
+.footer .sociales a {
+  color: var(--text-light);
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  transition: color var(--transition);
+}
+.footer .sociales a:hover {
+  color: var(--accent);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu ul { display: none; }
+  .menu-toggle { display: block; }
+  .menu.active ul { display: flex; flex-direction: column; gap: 1rem; background: var(--bg-dark); position: absolute; top: 100%; right: 0; padding: 1rem; border-radius: 0 0 0 8px; }
 }
