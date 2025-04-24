@@ -1,138 +1,81 @@
 <!-- index.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Luna Blanca: Rituales ancestrales, amarres de amor, limpiezas energéticas, lecturas de tarot y más.">
+  <meta name="description" content="Luna Blanca - Chamanismo Profesional: Rituales ancestrales y servicios espirituales">
   <title>Luna Blanca | Magia Ancestral & Servicios Chamánicos</title>
-  <!-- Fuentes e íconos -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Roboto:wght@400;500&display=swap" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
 
-  <!-- HEADER / NAVEGACIÓN -->
-  <header class="navbar" role="banner">
+<body>
+  <header class="navbar">
     <div class="container">
       <a href="#inicio" class="logo">
-        <img src="logo-lunablanca.png" alt="Logo Luna Blanca">
+        <img src="logo-lunablanca.webp" alt="Luna Blanca" width="120" height="60">
       </a>
       <nav class="menu">
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+        <ul class="menu-list">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" aria-label="Mostrar menú"><i class="fa fa-bars"></i></button>
+      <button class="menu-toggle" aria-label="Menú móvil">
+        <span class="hamburger"></span>
+      </button>
     </div>
   </header>
 
-  <!-- HERO PRINCIPAL -->
   <section id="inicio" class="hero">
-    <div class="hero-overlay"></div>
+    <div class="hero-media">
+      <video autoplay muted loop playsinline poster="hero-poster.webp">
+        <source src="hero-bg.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
     <div class="hero-content container">
-      <h1>Conecta con el Poder de la Magia Ancestral</h1>
-      <p>Rituales, limpiezas y consultas personalizadas para amor, protección y prosperidad.</p>
-      <button class="btn cta" onclick="showConsultationForm()">¡Quiero mi Consulta Gratis!</button>
+      <h1>Reconecta con tu Esencia Espiritual</h1>
+      <button class="btn cta-main" onclick="showConsultationForm()">Consulta Gratuita</button>
     </div>
   </section>
 
-  <!-- SECCIÓN SERVICIOS -->
-  <section id="servicios" class="services container">
-    <h2>Nuestros Servicios Chamánicos</h2>
-    <div class="service-grid">
-      <article class="service-card">
-        <i class="fa-solid fa-heart-pulse icon"></i>
-        <h3>Amarres de Amor</h3>
-        <p>Rituales garantizados para fortalecer vínculos afectivos.</p>
-      </article>
-      <article class="service-card">
-        <i class="fa-solid fa-moon-stars icon"></i>
-        <h3>Limpiezas Energéticas</h3>
-        <p>Purificación profunda para eliminar bloqueos negativos.</p>
-      </article>
-      <article class="service-card">
-        <i class="fa-solid fa-hat-wizard icon"></i>
-        <h3>Consultas Chamánicas</h3>
-        <p>Orientación espiritual con sabiduría ancestral.</p>
-      </article>
-      <article class="service-card">
-        <i class="fa-solid fa-magic icon"></i>
-        <h3>Protección Espiritual</h3>
-        <p>Escudos energéticos para tu hogar y tu persona.</p>
-      </article>
-      <article class="service-card">
-        <i class="fa-solid fa-star icon"></i>
-        <h3>Lectura de Tarot</h3>
-        <p>Cartas reveladoras de tu camino y tu destino.</p>
-      </article>
-      <article class="service-card">
-        <i class="fa-solid fa-sun icon"></i>
-        <h3>Astrología Personalizada</h3>
-        <p>Análisis de tu carta astral para guiar tu futuro.</p>
-      </article>
+  <section id="servicios" class="services">
+    <div class="container">
+      <h2>Nuestros Rituales</h2>
+      <div class="service-grid">
+        <!-- Servicios aquí -->
+      </div>
     </div>
   </section>
 
-  <!-- SECCIÓN TESTIMONIOS -->
   <section id="testimonios" class="testimonials">
     <div class="container">
-      <h2>Lo que dicen nuestros clientes</h2>
-      <div class="testimonial-slider">
-        <div class="testimonial active">
-          <p>“Increíble transformación: recuperé mi pareja en menos de una semana.”</p>
-          <span>- Mariana R.</span>
-        </div>
-        <div class="testimonial">
-          <p>“La limpieza energética cambió mi vida: ahora siento paz interna.”</p>
-          <span>- Jorge L.</span>
-        </div>
-        <div class="testimonial">
-          <p>“La lectura de tarot fue asombrosamente precisa y clarificadora.”</p>
-          <span>- Andrea G.</span>
-        </div>
+      <h2>Historias de Transformación</h2>
+      <div class="testimonial-carousel">
+        <!-- Testimonios aquí -->
       </div>
     </div>
   </section>
 
-  <!-- CTA / BOTÓN FIJO WHATSAPP -->
-  <a href="https://wa.me/1234567890" class="whatsapp-fixed" aria-label="Chatea con nosotros en WhatsApp">
-    <i class="fa fa-whatsapp"></i>
-  </a>
-
-  <!-- FOOTER / CONTACTO -->
   <footer id="contacto" class="footer">
     <div class="container">
-      <div class="footer-info">
-        <img src="sello-garantia.png" alt="25 años de experiencia - Resultados garantizados">
-        <p>© 2025 Luna Blanca. Todos los derechos reservados.</p>
-      </div>
-      <div class="sociales">
-        <a href="#" aria-label="Facebook"><i class="fa fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-        <a href="#" aria-label="TikTok"><i class="fa fa-tiktok"></i></a>
+      <div class="footer-grid">
+        <!-- Contenido del footer -->
       </div>
     </div>
   </footer>
 
-  <!-- MODAL CONSULTA -->
-  <div id="modal-consulta" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" aria-label="Cerrar">&times;</button>
-      <h3>Formulario de Consulta</h3>
-      <form id="form-consulta">
-        <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-        <input type="email" name="email" placeholder="Tu correo electrónico" required>
-        <textarea name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
-        <button type="submit" class="btn">Enviar Solicitud</button>
-      </form>
-    </div>
+  <div class="fixed-cta">
+    <a href="https://wa.me/5215512345678" class="whatsapp-cta">
+      <i class="fab fa-whatsapp"></i>
+    </a>
   </div>
 
-  <script src="scripts.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
