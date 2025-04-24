@@ -1,59 +1,84 @@
-// scripts.js
+// app.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Toggle menú móvil
+  // Menú móvil
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu');
+  
   menuToggle.addEventListener('click', () => {
     menu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', menu.classList.contains('active'));
   });
 
-  // Slider de testimonios
-  let idx = 0;
-  const slides = document.querySelectorAll('.testimonial');
-  function nextSlide() {
-    slides[idx].classList.remove('active');
-    idx = (idx + 1) % slides.length;
-    slides[idx].classList.add('active');
-  }
-  setInterval(nextSlide, 6000);
-
   // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      const tgt = document.querySelector(a.getAttribute('href'));
-      if (tgt) tgt.scrollIntoView({ behavior: 'smooth' });
-      // cerrar menú en móvil
-      if (menu.classList.contains('active')) menu.classList.remove('active');
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     });
   });
 
-  // Modal de consulta
-  const modal = document.getElementById('modal-consulta');
-  const btns = document.querySelectorAll('.cta, .show-consulta');
-  const closeBtn = modal.querySelector('.modal-close');
-  btns.forEach(b => b.addEventListener('click', showConsultationForm));
-  closeBtn.addEventListener('click', () => modal.classList.remove('active'));
-  modal.addEventListener('click', e => {
-    if (e.target === modal) modal.classList.remove('active');
+  // Observador de secciones para menú activo
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
   });
 
-  // Envío de formulario (simulado)
-  document.getElementById('form-consulta').addEventListener('submit', e => {
-    e.preventDefault();
-    alert('¡Tu solicitud ha sido enviada! Pronto recibirás respuesta.');
-    modal.classList.remove('active');
-    e.target.reset();
-  });
+  // Formulario de consulta
+  const consultationForm = document.getElementById('consultation-form');
+  if (consultationForm) {
+    consultationForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      // Aquí iría la lógica de envío
+      alert('Consulta enviada con éxito');
+    });
+  }
 
-  // Seguimiento botón WhatsApp
-  const wa = document.querySelector('.whatsapp-fixed');
-  wa.addEventListener('click', () => {
-    console.log('Usuario hizo clic en WhatsApp');
-    // Aquí podrías integrar Analytics o Pixel
-  });
+  // Animaciones al hacer scroll
+  const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+      
+      if (elementTop < window.innerHeight && elementBottom > 0) {
+        element.classList.add('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', animateOnScroll);
+  animateOnScroll(); // Ejecutar al cargar
+
+  // Control del video del hero
+  const heroVideo = document.querySelector('.hero-media video');
+  if (heroVideo) {
+    heroVideo.playbackRate = 0.7; // Velocidad reducida para efecto místico
+  }
 });
 
 function showConsultationForm() {
-  document.getElementById('modal-consulta').classList.add('active');
+  // Lógica para mostrar el modal
+  alert('Funcionalidad de formulario activada');
 }
